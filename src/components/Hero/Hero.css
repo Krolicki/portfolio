@@ -1,7 +1,9 @@
 .hero{
     height: 100vh;
-    background-color: rgb(var(--first-plan));
-    
+    /* background-color: rgb(var(--first-plan)); */
+    background-color: black;
+    position: relative; 
+    overflow: hidden;
 }
 
 .text-wraper{
@@ -12,9 +14,7 @@
     align-items: center;
     overflow: hidden;
     position: relative;
-    color: white;
-    
-    
+    color: white; 
 }
 
 .first-text-wraper{
@@ -61,4 +61,25 @@
 }
 .flip.second-text-wraper{
     transform: rotateY(0deg);
+}
+
+.landscape{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.first-plan{
+    width: 100%;
+    position: absolute;
+    bottom: -60%;
+    transform: translateY(-140%);
+    transition: transform 1.5s cubic-bezier(.22,1.12,1,.98);
+}
+
+.show-first-plan{
+    transform: translateY(0);
 }

@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react'
 import './Hero.css'
+import { ReactComponent as Plan1 } from './assets/plan1.svg'
 
 export const Hero = () => {
     const [loaded, setLoaded] = useState(false)
     const [firstStage, setFirstStage] = useState(false)
+    const [secondStage, setSecondStage] = useState(false)
+
 
     useEffect(()=>{
         setTimeout(()=>{
@@ -12,6 +15,9 @@ export const Hero = () => {
         setTimeout(()=>{
             setFirstStage(true)
         },2500)
+        setTimeout(()=>{
+            setSecondStage(true)
+        },3500)
         
     },[])
 
@@ -36,6 +42,9 @@ export const Hero = () => {
                         Jakub Królicki
                     </p>
                 </div>
+            </div>
+            <div className='landscape'>
+                <Plan1 className={`first-plan ${secondStage ? "show-first-plan" : ""}`} />
             </div>
         </section>
     )
