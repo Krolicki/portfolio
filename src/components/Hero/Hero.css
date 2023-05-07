@@ -75,7 +75,7 @@
 .first-plan{
     width: 100%;
     position: absolute;
-    bottom: -60%;
+    bottom: -65%;
     transform: translateY(-140%);
     transition: transform 1.5s cubic-bezier(.22,1.12,1,.98);
 }
