@@ -125,3 +125,43 @@
     transform: translateY(0) !important;
 }
 
+
+@media screen and (max-width: 700px){
+    .text-wraper{
+        width: 102%;
+        left: -1%;
+    }
+    .first-plan{
+        transform: translateY(-110%);
+        bottom: -2vw;
+        width: 104%;
+        left: -2%;
+    }
+    
+    .second-plan{
+        bottom: 50vw;
+    }
+    
+    .third-plan{
+        bottom: 68vw;
+    }
+    
+    .fourth-plan{
+        bottom: 74vw;
+    }
+    
+    .fifth-plan{
+        bottom: 76vw;
+    }
+    .background{
+        transform: translateY(-180%);
+        height: 100%;
+        width: auto;
+    }
+    .second-text-wraper{
+        font-size: 8vw;
+        left: calc(50% - 40vw);
+        width: 80vw;
+        padding: 2vw 0;
+    }
+}
