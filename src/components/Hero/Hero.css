@@ -15,6 +15,7 @@
     overflow: hidden;
     position: relative;
     color: white; 
+    z-index: 11;
 }
 
 .first-text-wraper{
@@ -46,9 +47,17 @@
     text-align: center;
     transform: rotateY(180deg);
     backface-visibility: hidden;
-    transition: transform .7s cubic-bezier(.22,1.12,1,.98);
-    background-color: rgb(var(--third-plan));
+    transition: transform .7s cubic-bezier(.22,1.12,1,.98),
+                opacity .5s ease-in;
+    background-color: rgb(35, 74, 141);
     padding: 2vw 0;
+}
+
+.second-text-wraper.final-stage{
+    opacity: .7;
+}
+.text-wraper.final-stage{
+    z-index: 9;
 }
 
 .second-text-wraper span{
@@ -72,14 +81,46 @@
 
 }
 
-.first-plan{
+.first-plan, .second-plan, .third-plan, .fourth-plan, .fifth-plan, .background{
     width: 100%;
     position: absolute;
-    bottom: -65%;
-    transform: translateY(-140%);
+    transform: translateY(-220%);
     transition: transform 1.5s cubic-bezier(.22,1.12,1,.98);
 }
 
-.show-first-plan{
-    transform: translateY(0);
+.first-plan{
+    transform: translateY(-50%);
+    bottom: -56vw;
+    z-index: 10;
 }
+
+.second-plan{
+    bottom: -22vw;
+    z-index: 8;
+}
+
+.third-plan{
+    bottom: -8vw;
+    z-index: 7;
+}
+
+.fourth-plan{
+    bottom: -7vw;
+    z-index: 6; 
+}
+
+.fifth-plan{
+    bottom: -7vw;
+    z-index: 5; 
+}
+
+.background{
+    width: 100%;
+    height: auto;
+    z-index: 4;
+}
+
+.show-first-plan{
+    transform: translateY(0) !important;
+}
+
