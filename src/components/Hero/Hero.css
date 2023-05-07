@@ -1,7 +1,7 @@
 .hero{
     height: 100vh;
-    /* background-color: rgb(var(--first-plan)); */
-    background-color: black;
+    background-color: rgb(var(--first-plan));
+    /* background-color: black; */
     position: relative; 
     overflow: hidden;
 }
@@ -15,7 +15,7 @@
     overflow: hidden;
     position: relative;
     color: white; 
-    z-index: 11;
+    z-index: 9;
 }
 
 .first-text-wraper{
@@ -47,14 +47,15 @@
     text-align: center;
     transform: rotateY(180deg);
     backface-visibility: hidden;
+    backdrop-filter: blur(2px);
     transition: transform .7s cubic-bezier(.22,1.12,1,.98),
-                opacity .5s ease-in;
+                background-color .5s ease-in;
     background-color: rgb(35, 74, 141);
     padding: 2vw 0;
 }
 
 .second-text-wraper.final-stage{
-    opacity: .7;
+    background-color: rgba(35, 74, 141, 0.483);
 }
 .text-wraper.final-stage{
     z-index: 9;
@@ -89,7 +90,7 @@
 }
 
 .first-plan{
-    transform: translateY(-50%);
+    transform: translateY(-90%);
     bottom: -56vw;
     z-index: 10;
 }
