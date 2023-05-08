@@ -78,7 +78,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-
 }
 
 .first-plan, .second-plan, .third-plan, .fourth-plan, .fifth-plan, .background{
@@ -154,8 +153,9 @@
     }
     .background{
         transform: translateY(-180%);
-        height: 100%;
+        height: 90%;
         width: auto;
+        z-index: 1;
     }
     .second-text-wraper{
         font-size: 8vw;
