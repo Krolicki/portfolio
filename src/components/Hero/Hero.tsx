@@ -9,23 +9,13 @@ import { ReactComponent as Plan5 } from './assets/plan5.svg'
 import { ReactComponent as Background } from './assets/background.svg'
 import { ReactComponent as BackgroundM } from './assets/backgroundm.svg'
 
-export const Hero = () => {
+export const Hero = ({globalScroll } : {globalScroll : number | null}) => {
     const [loaded, setLoaded] = useState(false)
     const [firstStage, setFirstStage] = useState(false)
     const [secondStage, setSecondStage] = useState(false)
     const [finalStage, setFinalStage] = useState(false)
 
     const [scroll, setScroll] = useState<number | null>(null)
-
-    const handleScroll = () => {
-        let value = window.scrollY
-        
-        if(window.innerHeight * 0.5 > value){
-            setScroll(value)
-            console.log(window.innerHeight * 0.5, value)
-        }
-    }
-
 
     useEffect(()=>{
         setTimeout(()=>{
@@ -40,13 +30,12 @@ export const Hero = () => {
         setTimeout(()=>{
             setFinalStage(true)
         },5000)
-
-        window.addEventListener('scroll', handleScroll)
-
-        return(()=>{
-            window.removeEventListener('scroll', handleScroll)
-        })
     },[])
+
+    useEffect(()=>{
+        if(globalScroll !== null && globalScroll < window.innerHeight / 2)
+            setScroll(globalScroll)
+    },[globalScroll])
 
     return (
         <section className='hero'>
