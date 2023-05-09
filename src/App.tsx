@@ -2,14 +2,15 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import { About } from './components/About/About'
 import { Hero } from './components/Hero/Hero'
+import throttle from 'lodash.throttle';
 
 function App() {
   const [scroll, setScroll] = useState<number | null>(null)
 
-  const handleScroll = () => {
+  const handleScroll = throttle(() => {
       let value = window.scrollY
       setScroll(value)
-  }
+  }, 50)
 
   useEffect(()=>{
       window.addEventListener('scroll', handleScroll)
