@@ -130,26 +130,26 @@
         left: -1%;
     }
     .first-plan{
-        transform: translateY(-110%);
-        bottom: -2vw;
+        transform: translateY(-250vw);
+        bottom: -170vw;
         width: 104%;
         left: -2%;
     }
     
     .second-plan{
-        bottom: 50vw;
+        bottom: 37vw;
     }
     
     .third-plan{
-        bottom: 68vw;
+        bottom: 55vw;
     }
     
     .fourth-plan{
-        bottom: 74vw;
+        bottom: 61vw;
     }
     
     .fifth-plan{
-        bottom: 76vw;
+        bottom: 63vw;
     }
     .background{
         transform: translateY(-180%);

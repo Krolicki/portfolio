@@ -32,7 +32,7 @@
     .about-wraper{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-rows: auto 1fr;
         grid-column-gap: 5vw;
         grid-row-gap: 0px;
         padding: 15vh 10vw;

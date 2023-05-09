@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import './Hero.css'
 import { ReactComponent as Plan1 } from './assets/plan1.svg'
+import { ReactComponent as Plan1m } from './assets/plan1m.svg'
 import { ReactComponent as Plan2 } from './assets/plan2.svg'
 import { ReactComponent as Plan3 } from './assets/plan3.svg'
 import { ReactComponent as Plan4 } from './assets/plan4.svg'
 import { ReactComponent as Plan5 } from './assets/plan5.svg'
 import { ReactComponent as Background } from './assets/background.svg'
+import { ReactComponent as BackgroundM } from './assets/backgroundm.svg'
 
 export const Hero = () => {
     const [loaded, setLoaded] = useState(false)
@@ -73,12 +75,20 @@ export const Hero = () => {
                 </div>
             </div>
             <div className='landscape'>
-                    <Plan1 style={scroll ? {transform: `translateY(-${scroll *1.5}px)`} : {}} className={`first-plan ${secondStage ? !scroll ?"show-first-plan":"" : ""}`}/>
-                    <Plan2 style={scroll ? {transform: `translateY(-${scroll *1.3}px)`} : {}} className={`second-plan ${secondStage ? !scroll ? "show-first-plan":"" : ""}`} />
-                    <Plan3 style={scroll ? {transform: `translateY(-${scroll *1.1}px)`} : {}} className={`third-plan ${secondStage ? !scroll ? "show-first-plan":"" : ""}`} />
-                    <Plan4 style={scroll ? {transform: `translateY(-${scroll *0.6}px)`} : {}} className={`fourth-plan ${secondStage ? !scroll ? "show-first-plan":"" : ""}`} />
-                    <Plan5 style={scroll ? {transform: `translateY(-${scroll *0.3}px)`} : {}} className={`fifth-plan ${secondStage ? !scroll ? "show-first-plan":"" : ""}`} />
-                    <Background style={scroll ? {transform: `translateY(-${scroll *0.1}px)`} : {}} className={`background ${secondStage ? !scroll ? "show-first-plan":"" : ""}`} />
+                {window.innerWidth < 700 ?
+                    <Plan1m style={scroll ? {transform: `translateY(-${scroll *1.2}px)`} : {}} className={`first-plan ${secondStage ? !scroll ?"show-first-plan":"" : ""}`}/>
+                    :
+                    <Plan1 style={scroll ? {transform: `translateY(-${scroll *1.2}px)`} : {}} className={`first-plan ${secondStage ? !scroll ?"show-first-plan":"" : ""}`}/>
+                }
+                <Plan2 style={scroll ? {transform: `translateY(-${scroll *1}px)`} : {}} className={`second-plan ${secondStage ? !scroll ? "show-first-plan":"" : ""}`} />
+                <Plan3 style={scroll ? {transform: `translateY(-${scroll *0.8}px)`} : {}} className={`third-plan ${secondStage ? !scroll ? "show-first-plan":"" : ""}`} />
+                <Plan4 style={scroll ? {transform: `translateY(-${scroll *0.6}px)`} : {}} className={`fourth-plan ${secondStage ? !scroll ? "show-first-plan":"" : ""}`} />
+                <Plan5 style={scroll ? {transform: `translateY(-${scroll *0.4}px)`} : {}} className={`fifth-plan ${secondStage ? !scroll ? "show-first-plan":"" : ""}`} />
+                {window.innerWidth < 700 ?
+                    <BackgroundM style={scroll ? {transform: `translateY(-${scroll *0.2}px)`} : {}} className={`background ${secondStage ? !scroll ? "show-first-plan":"" : ""}`} />
+                    :
+                    <Background style={scroll ? {transform: `translateY(-${scroll *0.2}px)`} : {}} className={`background ${secondStage ? !scroll ? "show-first-plan":"" : ""}`} />
+                }
             </div>
         </section>
     )
