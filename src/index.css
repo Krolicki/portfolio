@@ -2,6 +2,7 @@
   --first-plan: 14, 23, 56;
 
   --third-plan: 36, 60, 102;
+
 }
 
 html, body, *{
@@ -14,4 +15,8 @@ html, body, *{
 html, body{
   width: 100%;
   height: 100%;
+
+}
+body{
+  overflow: overlay;
 }

@@ -8,8 +8,8 @@ export const About = ({globalScroll} : {globalScroll : number | null}) => {
             <span>
                 <span className='about-img-wraper'>
                     <img src={aboutPhoto} className='about-img' />
-                    <span style={globalScroll ? {transform: `rotate(${globalScroll /2}deg)`} : {}} className='line1'></span>
-                    <span style={globalScroll ? {transform: `rotate(${globalScroll /4}deg)`} : {}} className='line2'></span>
+                    <span style={globalScroll ? {transform: `rotate(${globalScroll /4}deg)`} : {}} className='line1'></span>
+                    <span style={globalScroll ? {transform: `rotate(${globalScroll /2}deg)`} : {}} className='line2'></span>
                 </span>
             </span>
             <span className='about-content'>

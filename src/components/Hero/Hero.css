@@ -123,6 +123,10 @@
     transform: translateY(0) !important;
 }
 
+.scroll-sctive{
+    transition: transform .5s cubic-bezier(.22,1.12,1,.98);
+}
+
 
 @media screen and (max-width: 700px){
     .text-wraper{

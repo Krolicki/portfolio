@@ -6,11 +6,12 @@ import throttle from 'lodash.throttle';
 
 function App() {
   const [scroll, setScroll] = useState<number | null>(null)
+  const [animationCompleated, setAnimationCompleated] = useState(false)
 
   const handleScroll = throttle(() => {
       let value = window.scrollY
       setScroll(value)
-  }, 50)
+  }, 100)
 
   useEffect(()=>{
       window.addEventListener('scroll', handleScroll)
@@ -22,8 +23,10 @@ function App() {
 
   return (
     <>
-      <Hero globalScroll={scroll}/>
-      <About globalScroll={scroll}/>
+      <Hero globalScroll={scroll} setAnimationCompleated={setAnimationCompleated}/>
+      {animationCompleated &&
+        <About globalScroll={scroll}/>
+      }
     </>
   )
 }
