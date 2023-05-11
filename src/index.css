@@ -20,3 +20,6 @@ html, body{
 body{
   overflow: overlay;
 }
+#root{
+  overflow-x: hidden;
+}

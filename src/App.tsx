@@ -3,6 +3,7 @@ import './App.css'
 import { About } from './components/About/About'
 import { Hero } from './components/Hero/Hero'
 import throttle from 'lodash.throttle';
+import { Projects } from './components/Projects/Projects';
 
 function App() {
   const [scroll, setScroll] = useState<number | null>(null)
@@ -25,7 +26,10 @@ function App() {
     <>
       <Hero globalScroll={scroll} setAnimationCompleated={setAnimationCompleated}/>
       {animationCompleated &&
-        <About globalScroll={scroll}/>
+        <>
+          <About globalScroll={scroll}/>
+          <Projects />
+        </>
       }
     </>
   )
