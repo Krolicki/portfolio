@@ -7,7 +7,7 @@ export const Project = ({project} : {project : projectType}) => {
     const slidePhotoRef = useRef(0)
     const containerRef = useRef<HTMLDivElement | null>(null)
     const observerRef = useRef<IntersectionObserver | null>(null)
-
+    const intervalRef = useRef<number | null>(null)
 
     useEffect(() => {
         observerRef.current = new IntersectionObserver((entries) => {
@@ -23,11 +23,15 @@ export const Project = ({project} : {project : projectType}) => {
           if (observerRef.current) {
             observerRef.current.disconnect()
           }
+          if(intervalRef.current)
+            clearInterval(intervalRef.current)
         }
       }, [])
     
       const startInterval = () => {
-        const interval = setInterval(() => {
+        if(intervalRef.current)
+            clearInterval(intervalRef.current)
+        intervalRef.current = setInterval(() => {
           if (slidePhotoRef.current === project.images.length - 1) {
             slidePhotoRef.current = 0
           } else {
@@ -35,10 +39,11 @@ export const Project = ({project} : {project : projectType}) => {
           }
     
           setSlidePhoto(slidePhotoRef.current)
-        }, 3000)
+        }, 4000)
     
         return () => {
-          clearInterval(interval)
+            if(intervalRef.current)
+                clearInterval(intervalRef.current)
         }
       }
 

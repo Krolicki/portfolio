@@ -75,3 +75,38 @@
     padding: 1vh;
     background-color: rgb(var(--third-plan));
 }
+
+@media screen and (min-width: 920px){
+    .projects-wraper h1{
+        margin-block: 10vh;
+        font-size: 8vw;
+    }
+    .project{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, min-content) 1fr min-content;
+        grid-column-gap: 5vw;
+        grid-row-gap: 3vh;
+    }
+    
+    .project h2{
+        grid-area: 1 / 2 / 2 / 3; 
+    }
+    .project-images-slider{ 
+        grid-area: 1 / 1 / 6 / 2;
+    }
+    .project-slider-dots{
+        grid-area: 6 / 1 / 7 / 2;
+        margin: 0 auto;
+    }
+    .project p{
+        grid-area: 2 / 2 / 3 / 3;
+    }
+    .project .link{
+        grid-area: 3 / 2 / 4 / 3;
+    }
+    .project-technologies{
+        grid-area: 4 / 2 / 5 / 3;
+        gap: 1vw;
+    }
+}
