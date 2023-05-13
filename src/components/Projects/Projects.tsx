@@ -10,6 +10,7 @@ export type projectType = {
         link: string
     }
     technologies: string[]
+    flip: boolean
 }
 
 const projectsList : projectType[] = [
@@ -21,7 +22,8 @@ const projectsList : projectType[] = [
             desc: "Link do strony",
             link: "https://www.jednosc.gorlice.pl/"
         },
-        technologies: ["React", "JavaScript"]
+        technologies: ["React", "JavaScript"],
+        flip: false
     }
 ]
 

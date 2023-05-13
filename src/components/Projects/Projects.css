@@ -89,24 +89,28 @@
         grid-row-gap: 3vh;
     }
     
-    .project h2{
-        grid-area: 1 / 2 / 2 / 3; 
-    }
-    .project-images-slider{ 
-        grid-area: 1 / 1 / 6 / 2;
-    }
+    .project h2{ grid-area: 1 / 2 / 2 / 3; }
+    .project-images-slider{ grid-area: 1 / 1 / 6 / 2; }
     .project-slider-dots{
         grid-area: 6 / 1 / 7 / 2;
         margin: 0 auto;
     }
-    .project p{
-        grid-area: 2 / 2 / 3 / 3;
-    }
-    .project .link{
-        grid-area: 3 / 2 / 4 / 3;
-    }
+    .project p{ grid-area: 2 / 2 / 3 / 3; }
+    .project .link{ grid-area: 3 / 2 / 4 / 3; }
     .project-technologies{
         grid-area: 4 / 2 / 5 / 3;
+        gap: 1vw;
+    }
+    .flipColumns h2{ grid-area: 1 / 1 / 2 / 3; }
+    .flipColumns .project-images-slider{ grid-area: 1 / 2 / 6 / 2; }
+    .flipColumns .project-slider-dots{
+        grid-area: 6 / 2 / 7 / 2;
+        margin: 0 auto;
+    }
+    .flipColumns p{ grid-area: 2 / 1 / 3 / 2; }
+    .flipColumns .link{ grid-area: 3 / 1 / 4 / 2; }
+    .flipColumns .project-technologies{
+        grid-area: 4 / 1 / 5 / 2;
         gap: 1vw;
     }
 }

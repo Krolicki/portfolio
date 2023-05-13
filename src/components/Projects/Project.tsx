@@ -2,7 +2,11 @@ import { projectType } from './Projects'
 import { useRef, useState, useEffect } from 'react'
 import './Projects.css'
 
-export const Project = ({project} : {project : projectType}) => {
+type ProjectProps = {
+  project : projectType
+}
+
+export const Project = ({project} : ProjectProps) => {
     const [slidePhoto, setSlidePhoto] = useState(0)
     const slidePhotoRef = useRef(0)
     const containerRef = useRef<HTMLDivElement | null>(null)
@@ -48,7 +52,7 @@ export const Project = ({project} : {project : projectType}) => {
       }
 
     return(
-        <div className='project'>
+        <div className={`project ${project.flip ? "flipColumns" : ""}`}>
             <h2>{project.title}</h2>
             <div className='project-images-slider' ref={containerRef}>
                 <span className='project-images' style={{transform: `translateX(-${slidePhoto * 100}%)`}}>
