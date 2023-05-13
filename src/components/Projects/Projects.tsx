@@ -35,6 +35,17 @@ const projectsList : projectType[] = [
         },
         technologies: ["React", "JavaScript", "Firebase", "React Router"],
         flip: true
+    },
+    {
+        title: "Wielokrokowy Formularz",
+        images: ["step1.png", "step2.png", "step3.png"],
+        description: 'Formularz z walidacją pól (adres email, hasło, data urodzenia, zgody) i paskiem postępu.\nPosiada dwie wersje językowe: polski i angielski.',
+        ref:{
+            desc: "Link do repozytorium",
+            link: "https://github.com/Krolicki/react-multi-step-form"
+        },
+        technologies: ["React", "Typescript", "i18next"],
+        flip: false
     }
 ]
 
