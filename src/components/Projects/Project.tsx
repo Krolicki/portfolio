@@ -54,23 +54,25 @@ export const Project = ({project} : ProjectProps) => {
     return(
         <div className={`project ${project.flip ? "flipColumns" : ""}`}>
             <h2>{project.title}</h2>
-            <div className='project-images-slider' ref={containerRef}>
-                <span className='project-images' style={{transform: `translateX(-${slidePhoto * 100}%)`}}>
-                    {project.images.map((image, index) =>{
-                        return <img alt={image} src={`/projectsImages/${image}`} key={index}/>
-                    })}
-                </span>
+            <div className='project-photos'>
+              <div className='project-images-slider' ref={containerRef}>
+                  <span className='project-images' style={{transform: `translateX(-${slidePhoto * 100}%)`}}>
+                      {project.images.map((image, index) =>{
+                          return <img alt={image} src={`/projectsImages/${image}`} key={index}/>
+                      })}
+                  </span>
+              </div>
+              <div className='project-slider-dots'>
+                      {project.images.map((image, index) => (
+                          <span
+                              key={index}
+                              className={`dot ${index === slidePhoto ? "active-dot" : ""}`}
+                              onClick={() => setSlidePhoto(index)}
+                          />
+                          ))
+                      }
+              </div>
             </div>
-            <span className='project-slider-dots'>
-                    {project.images.map((image, index) => (
-                        <span
-                            key={index}
-                            className={`dot ${index === slidePhoto ? "active-dot" : ""}`}
-                            onClick={() => setSlidePhoto(index)}
-                        />
-                        ))
-                    }
-            </span>
             <p>{(project.description)}</p>
             <span className='link'>
                 <a href={`${project.ref.link}`} target='_blank'><b>{project.ref.desc}</b></a>

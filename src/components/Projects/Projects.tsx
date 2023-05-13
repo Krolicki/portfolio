@@ -46,6 +46,17 @@ const projectsList : projectType[] = [
         },
         technologies: ["React", "Typescript", "i18next"],
         flip: false
+    },
+    {
+        title: "Aplikacja Pogodowa",
+        images: ["weather.png"],
+        description: 'Aplikacja pogodowa z prognozą na 5 dni',
+        ref:{
+            desc: "Link do repozytorium",
+            link: "https://github.com/Krolicki/react-weather"
+        },
+        technologies: ["React", "Typescript", "OpenWeather API"],
+        flip: true
     }
 ]
 
