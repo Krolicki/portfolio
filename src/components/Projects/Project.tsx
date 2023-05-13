@@ -71,7 +71,7 @@ export const Project = ({project} : ProjectProps) => {
                         ))
                     }
             </span>
-            <p>{project.description}</p>
+            <p>{(project.description)}</p>
             <span className='link'>
                 <a href={`${project.ref.link}`} target='_blank'><b>{project.ref.desc}</b></a>
             </span>
