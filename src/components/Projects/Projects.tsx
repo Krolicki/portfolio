@@ -16,7 +16,7 @@ export type projectType = {
 const projectsList : projectType[] = [
     {
         title: "Jedność Gorlice",
-        images: ["jednosc1.png", "jednosc2.png", "jednosc3.png"],
+        images: ["jednosc1.png", "jednosc2.png", "jednosc3.png", "jednosc4.png"],
         description: 'Strona internetowa dla Spółdzielni Produkcyjno-Handlowej "JEDNOŚĆ" w Gorlicach.\nOpisuje historę firmy, zakłady produkcyjne, produkty piekarskie i cukiernicze oraz placówki.',
         ref:{
             desc: "Link do strony",
@@ -28,7 +28,7 @@ const projectsList : projectType[] = [
     {
         title: "Forum",
         images: ["forum1.png", "forum2.png","forum3.png","forum4.png","forum5.png"],
-        description: 'Strona "Landing Page" z forum.\nUmożliwia logowanie, rejestrację, dodawanie postów, edytowanie ich i usuwanie. Zawiera profile użytkowników ze statystykami, ranking najlepszych postów, wyszukiwarkę i podział postów na strony.\nTo mój najbardziej rozwinięty projekt',
+        description: 'Strona "Landing Page" z forum.\nUmożliwia logowanie, rejestrację, dodawanie postów, edytowanie ich i usuwanie. Zawiera profile użytkowników ze statystykami, ranking najlepszych postów, wyszukiwarkę i podział postów na strony.\nTo mój najbardziej rozwinięty projekt.',
         ref:{
             desc: "Link do repozytorium",
             link: "https://github.com/Krolicki/react-forum-page"
@@ -50,13 +50,24 @@ const projectsList : projectType[] = [
     {
         title: "Aplikacja Pogodowa",
         images: ["weather.png"],
-        description: 'Aplikacja pogodowa z prognozą na 5 dni',
+        description: 'Aplikacja pogodowa z prognozą na 5 dni.',
         ref:{
             desc: "Link do repozytorium",
             link: "https://github.com/Krolicki/react-weather"
         },
         technologies: ["React", "Typescript", "OpenWeather API"],
         flip: true
+    },
+    {
+        title: "Edytor zdjęć",
+        images: ["editor1.png", "editor2.png"],
+        description: 'Pozwala na edytowanie zdjęć filtrami CSS i zapisywanie plików przy użyciu HTML Canvas.\nZdjęcia można przesłać lub wybrać z niekończońcej się ściany zdjęć pobieranych z Unsplash.com.',
+        ref:{
+            desc: "Link do repozytorium",
+            link: "https://github.com/Krolicki/react-photo-editor"
+        },
+        technologies: ["React", "Typescript", "HTML Canvas"],
+        flip: false
     }
 ]
 
