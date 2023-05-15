@@ -4,9 +4,10 @@ import './Projects.css'
 
 type ProjectProps = {
   project : projectType
+  flip: boolean
 }
 
-export const Project = ({project} : ProjectProps) => {
+export const Project = ({project, flip} : ProjectProps) => {
     const [slidePhoto, setSlidePhoto] = useState(0)
     const slidePhotoRef = useRef(0)
     const containerRef = useRef<HTMLDivElement | null>(null)
@@ -62,7 +63,7 @@ export const Project = ({project} : ProjectProps) => {
     } 
 
     return(
-        <div className={`project ${project.flip ? "flipColumns" : ""}`}>
+        <div className={`project ${flip ? "flipColumns" : ""}`}>
             <h2>{project.title}</h2>
             <div className='project-photos'>
               <div className='project-images-slider' ref={containerRef}>

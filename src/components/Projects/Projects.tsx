@@ -10,7 +10,6 @@ export type projectType = {
         link: string
     }
     technologies: string[]
-    flip: boolean
 }
 
 const projectsList : projectType[] = [
@@ -22,8 +21,7 @@ const projectsList : projectType[] = [
             desc: "Link do strony",
             link: "https://www.jednosc.gorlice.pl/"
         },
-        technologies: ["React", "JavaScript", "React Router", "React Helmet"],
-        flip: false
+        technologies: ["React", "JavaScript", "React Router", "React Helmet"]
     },
     {
         title: "Forum",
@@ -33,8 +31,7 @@ const projectsList : projectType[] = [
             desc: "Link do repozytorium",
             link: "https://github.com/Krolicki/react-forum-page"
         },
-        technologies: ["React", "JavaScript", "Firebase", "React Router"],
-        flip: true
+        technologies: ["React", "JavaScript", "Firebase", "React Router"]
     },
     {
         title: "Wielokrokowy Formularz",
@@ -44,8 +41,7 @@ const projectsList : projectType[] = [
             desc: "Link do repozytorium",
             link: "https://github.com/Krolicki/react-multi-step-form"
         },
-        technologies: ["React", "Typescript", "i18next"],
-        flip: false
+        technologies: ["React", "Typescript", "i18next"]
     },
     {
         title: "Aplikacja Pogodowa",
@@ -55,8 +51,7 @@ const projectsList : projectType[] = [
             desc: "Link do repozytorium",
             link: "https://github.com/Krolicki/react-weather"
         },
-        technologies: ["React", "Typescript", "OpenWeather API"],
-        flip: true
+        technologies: ["React", "Typescript", "OpenWeather API"]
     },
     {
         title: "Edytor zdjęć",
@@ -66,8 +61,17 @@ const projectsList : projectType[] = [
             desc: "Link do repozytorium",
             link: "https://github.com/Krolicki/react-photo-editor"
         },
-        technologies: ["React", "Typescript", "HTML Canvas"],
-        flip: false
+        technologies: ["React", "Typescript", "HTML Canvas"]
+    },
+    {
+        title: "Raspberry Pi",
+        images: ["rasp1.png", "rasp2.png", "rasp3.png"],
+        description: 'Tworzę także aplikacje i systemy na Raspberry Pi.\nWykonałem m.in. sterowanie roletami okiennymi, sterowanie światłem, system alarmowy z czujnikami ruchu, czujnikiem otwarcia drzwi i kartami dostępu.',
+        ref:{
+            desc: "Link do repozytoriów",
+            link: "https://github.com/Krolicki?tab=repositories&q=raspberry&type=&language=&sort="
+        },
+        technologies: ["Python", "Raspberry Pi", "Flask", "Javascript"]
     }
 ]
 
@@ -76,9 +80,9 @@ export const Projects = () => {
     return(
         <section className='projects-wraper'>
             <h1>Moje projekty</h1>
-            {projectsList.map((project)=>{
+            {projectsList.map((project, index)=>{
                 return(
-                    <Project project={project} key={project.title}/>
+                    <Project project={project} flip={index % 2 === 1} key={project.title}/>
                 )
             })}
         </section>
