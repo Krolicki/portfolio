@@ -51,6 +51,16 @@ export const Project = ({project} : ProjectProps) => {
         }
       }
 
+    const changeSlide = (index : number) => {
+      if(intervalRef.current)
+        clearInterval(intervalRef.current)
+      slidePhotoRef.current = index
+      setSlidePhoto(index)
+      setTimeout(()=>{
+        startInterval()
+      }, 3000)
+    } 
+
     return(
         <div className={`project ${project.flip ? "flipColumns" : ""}`}>
             <h2>{project.title}</h2>
@@ -67,7 +77,7 @@ export const Project = ({project} : ProjectProps) => {
                           <span
                               key={index}
                               className={`dot ${index === slidePhoto ? "active-dot" : ""}`}
-                              onClick={() => setSlidePhoto(index)}
+                              onClick={() => changeSlide(index)}
                           />
                           ))
                       }
