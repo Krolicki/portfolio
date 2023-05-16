@@ -1,0 +1,50 @@
+.github-wraper{
+    padding: 0 10vw 15vh;
+    color: white;
+    display: flex;
+    gap: 10vw;
+    width: 100%;
+}
+
+.git-info{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3vh;
+}
+.git-info h3{
+    
+}
+.git-info a{
+    max-width: 40%;
+    display: flex;
+    padding: 2vw;
+    background-color: rgb(var(--third-plan));
+    transition: background-color .3s;
+}
+.git-info img{
+    max-width: 100%;
+}
+.git-info a:hover{
+    background-color: black;
+}
+.git-logo-wraper{
+    flex: 1;
+}
+
+.git-logo{
+    width: 600%;
+    height: 100%;
+}
+
+@media screen and (min-width: 720px){
+    .git-info h3{
+        font-size: 3vw;
+    }
+    .git-info a{
+        padding: 1vw;
+        width: 20%;
+    }
+}
