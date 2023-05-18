@@ -1,0 +1,55 @@
+.contact-wraper{
+    padding: 0 10vw 15vh;
+    color: white;
+    width: 100%;
+    position: relative;
+}
+.contact-icon-wraper{
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0vw;
+    width: auto;
+    height: 70%;
+    transform: rotate(20deg);
+}
+.contact-icon{
+    height: 100%;
+    margin-right: auto;
+}
+.contact-content{
+    width: 80%;
+}
+.contact-wraper h2{
+    margin-bottom: 2vh;
+}
+.contact-wraper p{
+    margin-bottom: 2vh;
+}
+.contact-wraper a{
+    color: white;
+    text-decoration: none;
+}
+.contact-linkedin{
+    background-color: rgba(10, 102, 194);
+    display: inline-block;
+    padding: 1vh 3vw;
+    transition: background-color .3s;
+}
+.contact-linkedin:hover{
+    background-color: rgba(57, 57, 57, 0.629);
+}
+@media screen and (min-width: 920px){
+    .contact-wraper h2{
+        font-size: 4vw;
+    }
+    .contact-wraper p{
+        font-size: 1.5vw;
+    }
+    .contact-wraper a{
+        font-size: 1.5vw;
+    }
+    .contact-linkedin{
+        padding: .1rem 1vw;
+    }
+}

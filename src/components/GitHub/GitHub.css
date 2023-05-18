@@ -14,9 +14,6 @@
     justify-content: center;
     gap: 3vh;
 }
-.git-info h3{
-    
-}
 .git-info a{
     max-width: 40%;
     display: flex;
