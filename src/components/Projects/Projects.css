@@ -94,7 +94,11 @@
         grid-column-gap: 5vw;
         grid-row-gap: 3vh;
     }
-    
+    .project h2{ font-size: 1.5vw;}
+    .project p { font-size: 1.2vw;}
+    .link b{ font-size: 1.4vw; }
+    .project-technologies span{ font-size: 1.2vw;}
+
     .project h2{ grid-area: 1 / 2 / 2 / 3; }
     .project-photos{ grid-area: 1 / 1 / 6 / 2; }
     .project p{ grid-area: 2 / 2 / 3 / 3; }

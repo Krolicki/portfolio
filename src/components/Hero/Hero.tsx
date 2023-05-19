@@ -41,7 +41,7 @@ export const Hero = ({globalScroll, setAnimationCompleated } : HeroProps) => {
     },[])
 
     useEffect(()=>{
-        if(globalScroll !== null && globalScroll < window.innerHeight / 2)
+        if(globalScroll !== null && globalScroll < window.innerHeight * 0.75)
             setScroll(globalScroll)
     },[globalScroll])
 
@@ -64,8 +64,10 @@ export const Hero = ({globalScroll, setAnimationCompleated } : HeroProps) => {
                         second-text-wraper
                         ${firstStage ? "flip" : ""}
                         ${finalStage ? "final-stage" : ''}
-                    `}>
-                    <p className='second-text' >
+                    `}
+                    style={scroll ? {transform: `translateY(${scroll *0.2}px)`} : {}}
+                >
+                    <p className='second-text'>
                         <span>Jestem</span>
                         Jakub Królicki
                     </p>
@@ -73,18 +75,18 @@ export const Hero = ({globalScroll, setAnimationCompleated } : HeroProps) => {
             </div>
             <div className='landscape'>
                 {window.innerWidth < 700 ?
-                    <Plan1m style={scroll ? {transform: `translateY(-${scroll *1.2}px)`} : {}} className={`first-plan ${showLandscape}`}/>
+                    <Plan1m style={scroll ? {transform: `translateY(-${scroll *0.6}px)`} : {}} className={`first-plan ${showLandscape}`}/>
                     :
-                    <Plan1 style={scroll ? {transform: `translateY(-${scroll *1.2}px)`} : {}} className={`first-plan ${showLandscape}`}/>
+                    <Plan1 style={scroll ? {transform: `translateY(-${scroll *0.6}px)`} : {}} className={`first-plan ${showLandscape}`}/>
                 }
-                <Plan2 style={scroll ? {transform: `translateY(-${scroll *1}px)`} : {}} className={`second-plan ${showLandscape}`} />
-                <Plan3 style={scroll ? {transform: `translateY(-${scroll *0.8}px)`} : {}} className={`third-plan ${showLandscape}`} />
-                <Plan4 style={scroll ? {transform: `translateY(-${scroll *0.6}px)`} : {}} className={`fourth-plan ${showLandscape}`} />
-                <Plan5 style={scroll ? {transform: `translateY(-${scroll *0.4}px)`} : {}} className={`fifth-plan ${showLandscape}`} />
+                <Plan2 style={scroll ? {transform: `translateY(-${scroll *0.4}px)`} : {}} className={`second-plan ${showLandscape}`} />
+                <Plan3 style={scroll ? {transform: `translateY(-${scroll *0.2}px)`} : {}} className={`third-plan ${showLandscape}`} />
+                <Plan4 style={scroll ? {transform: `translateY(-${scroll *0.1}px)`} : {}} className={`fourth-plan ${showLandscape}`} />
+                <Plan5 style={scroll ? {transform: `translateY(-${scroll *0.07}px)`} : {}} className={`fifth-plan ${showLandscape}`} />
                 {window.innerWidth < 700 ?
-                    <BackgroundM style={scroll ? {transform: `translateY(-${scroll *0.2}px)`} : {}} className={`background ${showLandscape}`} />
+                    <BackgroundM style={scroll ? {transform: `translateY(-${scroll *0.05}px)`} : {}} className={`background ${showLandscape}`} />
                     :
-                    <Background style={scroll ? {transform: `translateY(-${scroll *0.2}px)`} : {}} className={`background ${showLandscape}`} />
+                    <Background style={scroll ? {transform: `translateY(-${scroll *0.05}px)`} : {}} className={`background ${showLandscape}`} />
                 }
             </div>
         </section>

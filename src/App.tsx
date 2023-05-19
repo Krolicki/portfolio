@@ -6,6 +6,7 @@ import throttle from 'lodash.throttle';
 import { Projects } from './components/Projects/Projects';
 import { GitHub } from './components/GitHub/GitHub';
 import { Contact } from './components/Contact/Contact';
+import { Footer } from './components/Footer/Footer';
 
 function App() {
   const [scroll, setScroll] = useState<number | null>(null)
@@ -14,7 +15,7 @@ function App() {
   const handleScroll = throttle(() => {
       let value = window.scrollY
       setScroll(value)
-  }, 100)
+  }, 30)
 
   useEffect(()=>{
       window.addEventListener('scroll', handleScroll)
@@ -33,6 +34,7 @@ function App() {
           <Projects />
           <GitHub />
           <Contact />
+          <Footer />
         </>
       }
     </>

@@ -105,5 +105,6 @@
     }
     .about-content{
         width: 40%;
+        font-size: 1.2vw;
     }
 }
