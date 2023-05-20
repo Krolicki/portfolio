@@ -83,6 +83,7 @@ export const Project = ({project, flip} : ProjectProps) => {
                           />
                           ))
                       }
+                      
               </div>
             </div>
             <p>{(project.description)}</p>

@@ -7,6 +7,7 @@ import { Projects } from './components/Projects/Projects';
 import { GitHub } from './components/GitHub/GitHub';
 import { Contact } from './components/Contact/Contact';
 import { Footer } from './components/Footer/Footer';
+import { Navbar } from './components/Navbar/Navbar';
 
 function App() {
   const [scroll, setScroll] = useState<number | null>(null)
@@ -30,6 +31,7 @@ function App() {
       <Hero globalScroll={scroll} setAnimationCompleated={setAnimationCompleated}/>
       {animationCompleated &&
         <>
+          <Navbar />
           <About globalScroll={scroll}/>
           <Projects />
           <GitHub />

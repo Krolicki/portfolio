@@ -4,6 +4,8 @@
     display: flex;
     gap: 10vw;
     width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden !important; 
 }
 
 .git-info{

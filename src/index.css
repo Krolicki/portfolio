@@ -20,6 +20,7 @@ html, body{
 body{
   overflow: overlay;
   background-color: rgb(var(--first-plan));
+  overflow-x: hidden;
 }
 #root{
   overflow-x: hidden;

@@ -129,12 +129,15 @@
 
 
 @media screen and (max-width: 700px){
+    .second-plan, .third-plan, .fourth-plan, .fifth-plan, .background{
+        transform: translateY(-300%);
+    }
     .text-wraper{
         width: 102%;
         left: -1%;
     }
     .first-plan{
-        transform: translateY(-250vw);
+        transform: translateY(-120%);
         bottom: -170vw;
         width: 104%;
         left: -2%;
