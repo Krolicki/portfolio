@@ -31,7 +31,7 @@ function App() {
       <Hero globalScroll={scroll} setAnimationCompleated={setAnimationCompleated}/>
       {animationCompleated &&
         <>
-          <Navbar />
+          <Navbar globalScroll={scroll}/>
           <About globalScroll={scroll}/>
           <Projects />
           <GitHub />

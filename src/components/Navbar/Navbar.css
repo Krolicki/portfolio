@@ -47,7 +47,8 @@ nav{
     background-color: rgba(255, 255, 255, 0.43);
     backdrop-filter: blur(8px);
     flex-direction: column;
-    width: 100%;
+    width: 90%;
+    border-radius: 4vw;
     margin-inline: auto;
     padding: 6vh 0 26vh;
     transform: translateY(100%);
@@ -59,4 +60,30 @@ nav{
 }
 .show-menu{
     transform: translateY(0%);
+}
+
+@media screen and (min-width: 700px){
+    .nav-button{
+        display: none;
+    }
+    .nav-items{
+        transform: translateY(0%);
+        flex-direction: row;
+        font-size: 1.5vw;
+        gap: 1vw;
+        padding: 1vh 2vw;
+        bottom: 2vh;
+        justify-content: center;
+        width: auto;
+        transition: transform .3s;
+        animation: show-menu-button .5s;
+        will-change: transform;
+    }
+    .nav-items span{
+        padding: 2vh 2vw;
+        cursor: pointer;
+    }
+    .nav-items.scroll-down{
+        transform: translateY(calc(100% + 2vh));
+    }
 }
