@@ -9,27 +9,27 @@ type SectionType = {
 const Sections : SectionType[]= [
     {
         title: "Start",
-        link: ""
+        link: "hero"
     },
     {
         title: "O mnie",
-        link: ""
+        link: "about"
     },
     {
         title: "Projekty",
-        link: ""
+        link: "projects"
     },
     {
         title: "GitHub",
-        link: ""
+        link: "github"
     },
     {
         title: "Kontakt",
-        link: ""
+        link: "contact"
     }
 ]
 
-export const Navbar = ({globalScroll} : {globalScroll : number | null}) => {
+export const Navbar = ({globalScroll, scrollToComponent} : {globalScroll : number | null, scrollToComponent : (link : string) => void}) => {
     const [menuClick, setMenuClick] = useState(false)
     const [scrollDown, setScrollDown] = useState(false)
 
@@ -62,7 +62,7 @@ export const Navbar = ({globalScroll} : {globalScroll : number | null}) => {
                 <div className={`nav-items ${menuClick ? "show-menu" : ""} ${scrollDown ? "scroll-down" : ""}`}>
                     {Sections.map(section => {
                         return(
-                            <span>{section.title}</span>
+                            <span onClick={()=>scrollToComponent(section.link)}>{section.title}</span>
                         )
                     })}
                 </div>

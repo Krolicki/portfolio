@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { forwardRef, useEffect, useState } from 'react'
 import './Hero.css'
 import { ReactComponent as Plan1 } from './assets/plan1.svg'
 import { ReactComponent as Plan1m } from './assets/plan1m.svg'
@@ -11,10 +11,10 @@ import { ReactComponent as BackgroundM } from './assets/backgroundm.svg'
 
 type HeroProps = {
     globalScroll : number | null
-    setAnimationCompleated : React.Dispatch<React.SetStateAction<boolean>>
+    setAnimationCompleted : React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export const Hero = ({globalScroll, setAnimationCompleated } : HeroProps) => {
+export const Hero = forwardRef<HTMLDivElement, HeroProps>(({ globalScroll, setAnimationCompleted }, ref) => {
     const [loaded, setLoaded] = useState(false)
     const [firstStage, setFirstStage] = useState(false)
     const [secondStage, setSecondStage] = useState(false)
@@ -36,7 +36,7 @@ export const Hero = ({globalScroll, setAnimationCompleated } : HeroProps) => {
         },3500)
         setTimeout(()=>{
             setFinalStage(true)
-            setAnimationCompleated(true)
+            setAnimationCompleted(true)
         },5000)
     },[])
 
@@ -46,7 +46,7 @@ export const Hero = ({globalScroll, setAnimationCompleated } : HeroProps) => {
     },[globalScroll])
 
     return (
-        <section className='hero'>
+        <section className='hero' ref={ref}>
             <div className={`
                 text-wraper 
                 ${secondStage? "final-stage" : ""}`
@@ -91,4 +91,4 @@ export const Hero = ({globalScroll, setAnimationCompleated } : HeroProps) => {
             </div>
         </section>
     )
-}
+})
