@@ -38,17 +38,12 @@ export const Navbar = ({globalScroll, scrollToComponent} : {globalScroll : numbe
     useEffect(()=>{
         if(globalScroll){
             if(globalScroll <= 0){
-                //document.body.classList.remove("scroll-up");
                 setScrollDown(false)
             }
             if(globalScroll > lastScroll.current){
-                //document.body.classList.add("scroll-down");
-                //document.body.classList.remove("scroll-up");
                 setScrollDown(true)
             }
             if(globalScroll < lastScroll.current){
-                //document.body.classList.add("scroll-up");
-                //document.body.classList.remove("scroll-down");
                 setScrollDown(false)
             }
             lastScroll.current = globalScroll;

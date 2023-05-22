@@ -1,9 +1,10 @@
+import { forwardRef } from 'react'
 import './About.css'
 import aboutPhoto from './me.jpg'
 
-export const About = ({globalScroll} : {globalScroll : number | null}) => {
+export const About = forwardRef<HTMLDivElement, {globalScroll : number | null}>(({globalScroll}, ref) => {
     return(
-        <section className='about-wraper'>
+        <section className='about-wraper' ref={ref}>
             <p className='about-header'>Kto?</p>
             <span>
                 <span className='about-img-wraper'>
@@ -25,4 +26,4 @@ export const About = ({globalScroll} : {globalScroll : number | null}) => {
             </span>
         </section>
     )
-}
+})

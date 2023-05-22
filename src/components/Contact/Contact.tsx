@@ -1,9 +1,10 @@
+import { forwardRef } from 'react'
 import './Contact.css'
 import { ReactComponent as MailIcon } from './mail.svg'
 
-export const Contact = () => {
+export const Contact = forwardRef<HTMLDivElement>((_,ref) => {
     return(
-        <section className='contact-wraper'>
+        <section className='contact-wraper' ref={ref}>
             <div className='contact-icon-wraper'>
                 <MailIcon className='contact-icon'/>
             </div>
@@ -14,4 +15,4 @@ export const Contact = () => {
             </div>
         </section>
     )
-}
+})

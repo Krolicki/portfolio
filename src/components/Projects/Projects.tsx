@@ -1,3 +1,4 @@
+import { forwardRef } from 'react'
 import { Project } from './Project'
 import './Projects.css'
 
@@ -76,9 +77,9 @@ const projectsList : projectType[] = [
 ]
 
 
-export const Projects = () => {
+export const Projects = forwardRef<HTMLDivElement>((_,ref) => {
     return(
-        <section className='projects-wraper'>
+        <section className='projects-wraper' ref={ref}>
             <h1>Moje projekty</h1>
             {projectsList.map((project, index)=>{
                 return(
@@ -87,4 +88,4 @@ export const Projects = () => {
             })}
         </section>
     )
-}
+})
