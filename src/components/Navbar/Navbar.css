@@ -86,4 +86,7 @@ nav{
     .nav-items.scroll-down{
         transform: translateY(calc(100% + 2vh));
     }
+    nav:hover .nav-items{
+        transform: translateY(0%);
+    }
 }

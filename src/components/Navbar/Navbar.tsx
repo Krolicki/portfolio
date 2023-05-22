@@ -57,7 +57,10 @@ export const Navbar = ({globalScroll, scrollToComponent} : {globalScroll : numbe
                 <div className={`nav-items ${menuClick ? "show-menu" : ""} ${scrollDown ? "scroll-down" : ""}`}>
                     {Sections.map(section => {
                         return(
-                            <span onClick={()=>scrollToComponent(section.link)}>{section.title}</span>
+                            <span onClick={()=>{
+                                scrollToComponent(section.link)
+                                setMenuClick(false)
+                            }}>{section.title}</span>
                         )
                     })}
                 </div>

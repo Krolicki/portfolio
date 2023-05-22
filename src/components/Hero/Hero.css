@@ -85,6 +85,7 @@
     position: absolute;
     transform: translateY(-220%);
     transition: transform 1.5s cubic-bezier(.22,1.12,1,.98);
+    will-change: transform;
 }
 
 .first-plan{
@@ -131,6 +132,7 @@
 @media screen and (max-width: 700px){
     .second-plan, .third-plan, .fourth-plan, .fifth-plan, .background{
         transform: translateY(-300%);
+        will-change: transform;
     }
     .text-wraper{
         width: 102%;
