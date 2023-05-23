@@ -75,18 +75,18 @@ export const Hero = forwardRef<HTMLDivElement, HeroProps>(({ globalScroll, setAn
             </div>
             <div className='landscape'>
                 {window.innerWidth < 700 ?
-                    <Plan1m style={scroll ? {transform: `translateY(-${scroll *0.6}px)`} : {}} className={`first-plan ${showLandscape}`}/>
+                    <Plan1m style={scroll ? {transform: `translateY(-${scroll *0.6}px) translateZ(0)`} : {}} className={`first-plan ${showLandscape}`}/>
                     :
-                    <Plan1 style={scroll ? {transform: `translateY(-${scroll *0.6}px)`} : {}} className={`first-plan ${showLandscape}`}/>
+                    <Plan1 style={scroll ? {transform: `translateY(-${scroll *0.6}px) translateZ(0)`} : {}} className={`first-plan ${showLandscape}`}/>
                 }
-                <Plan2 style={scroll ? {transform: `translateY(-${scroll *0.4}px)`} : {}} className={`second-plan ${showLandscape}`} />
-                <Plan3 style={scroll ? {transform: `translateY(-${scroll *0.2}px)`} : {}} className={`third-plan ${showLandscape}`} />
-                <Plan4 style={scroll ? {transform: `translateY(-${scroll *0.1}px)`} : {}} className={`fourth-plan ${showLandscape}`} />
-                <Plan5 style={scroll ? {transform: `translateY(-${scroll *0.07}px)`} : {}} className={`fifth-plan ${showLandscape}`} />
+                <Plan2 style={scroll ? {transform: `translateY(-${scroll *0.4}px) translateZ(0)`} : {}} className={`second-plan ${showLandscape}`} />
+                <Plan3 style={scroll ? {transform: `translateY(-${scroll *0.2}px) translateZ(0)`} : {}} className={`third-plan ${showLandscape}`} />
+                <Plan4 style={scroll ? {transform: `translateY(-${scroll *0.1}px) translateZ(0)`} : {}} className={`fourth-plan ${showLandscape}`} />
+                <Plan5 style={scroll ? {transform: `translateY(-${scroll *0.07}px) translateZ(0)`} : {}} className={`fifth-plan ${showLandscape}`} />
                 {window.innerWidth < 700 ?
-                    <BackgroundM style={scroll ? {transform: `translateY(-${scroll *0.05}px)`} : {}} className={`background ${showLandscape}`} />
+                    <BackgroundM style={scroll ? {transform: `translateY(-${scroll *0.05}px) translateZ(0)`} : {}} className={`background ${showLandscape}`} />
                     :
-                    <Background style={scroll ? {transform: `translateY(-${scroll *0.05}px)`} : {}} className={`background ${showLandscape}`} />
+                    <Background style={scroll ? {transform: `translateY(-${scroll *0.05}px) translateZ(0)`} : {}} className={`background ${showLandscape}`} />
                 }
             </div>
         </section>
