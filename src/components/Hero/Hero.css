@@ -125,7 +125,7 @@
 }
 
 .scroll-sctive{
-    transition: transform .5s cubic-bezier(.22,1.12,1,.98);
+    transition: transform .3s cubic-bezier(.22,1.12,1,.98);
 }
 
 

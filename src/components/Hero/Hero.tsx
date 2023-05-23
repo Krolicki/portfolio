@@ -1,4 +1,5 @@
 import { forwardRef, useEffect, useState } from 'react'
+import { useTransition, animated, useSpring } from 'react-spring';
 import './Hero.css'
 import { ReactComponent as Plan1 } from './assets/plan1.svg'
 import { ReactComponent as Plan1m } from './assets/plan1m.svg'
@@ -13,6 +14,13 @@ type HeroProps = {
     globalScroll : number | null
     setAnimationCompleted : React.Dispatch<React.SetStateAction<boolean>>
 }
+
+const AnimatedPlan1 = animated(window.innerWidth < 700 ? Plan1m : Plan1)
+const AnimatedPlan2 = animated(Plan2)
+const AnimatedPlan3 = animated(Plan3)
+const AnimatedPlan4 = animated(Plan4)
+const AnimatedPlan5 = animated(Plan5)
+const AnimatedBackground = animated(window.innerWidth < 700 ? BackgroundM : Background)
 
 export const Hero = forwardRef<HTMLDivElement, HeroProps>(({ globalScroll, setAnimationCompleted }, ref) => {
     const [loaded, setLoaded] = useState(false)
@@ -45,6 +53,50 @@ export const Hero = forwardRef<HTMLDivElement, HeroProps>(({ globalScroll, setAn
             setScroll(globalScroll)
     },[globalScroll])
 
+    // const firstPlanAnimation = useSpring({
+    //     transform: `translateY(-${scroll * 0.6}px) translateZ(0)`,
+    //     config: { duration: 0, immediate: true, delay: 0 }
+    // })
+    // const secondPlanAnimation = useSpring({
+    //     transform: `translateY(-${scroll * 0.4}px) translateZ(0)`,
+    //     config: { duration: 0, immediate: true, delay: 0 }
+    // })
+    // const thirdPlanAnimation = useSpring({
+    //     transform: `translateY(-${scroll * 0.2}px) translateZ(0)`,
+    //     config: { duration: 0, immediate: true , delay: 0}
+    // })
+    // const fourthPlanAnimation = useSpring({
+    //     transform: `translateY(-${scroll * 0.1}px) translateZ(0)`,
+    //     config: { duration: 0, immediate: true , delay: 0}
+    // })
+    // const fifthPlanAnimation = useSpring({
+    //     transform: `translateY(-${scroll * 0.07}px) translateZ(0)`,
+    //     config: { duration: 0, immediate: true , delay: 0}
+    // })
+    // const backgroundAnimation = useSpring({
+    //     transform: `translateY(-${scroll * 0.05}px) translateZ(0)`,
+    //     config: { duration: 0, immediate: true, delay: 0 }
+    // })
+    const firstPlanAnimation =  {
+        transform: `translateY(-${scroll * 0.6}px) translateZ(0)`
+    }
+    const secondPlanAnimation = {
+        transform: `translateY(-${scroll * 0.4}px) translateZ(0)`
+    }
+    const thirdPlanAnimation = {
+        transform: `translateY(-${scroll * 0.2}px) translateZ(0)`
+    }
+    const fourthPlanAnimation = {
+        transform: `translateY(-${scroll * 0.1}px) translateZ(0)`
+    }
+    const fifthPlanAnimation = {
+        transform: `translateY(-${scroll * 0.07}px) translateZ(0)`
+    }
+    const backgroundAnimation = {
+        transform: `translateY(-${scroll * 0.05}px) translateZ(0)`
+    }
+    
+
     return (
         <section className='hero' ref={ref}>
             <div className={`
@@ -74,20 +126,12 @@ export const Hero = forwardRef<HTMLDivElement, HeroProps>(({ globalScroll, setAn
                 </div>
             </div>
             <div className='landscape'>
-                {window.innerWidth < 700 ?
-                    <Plan1m style={scroll ? {transform: `translateY(-${scroll *0.6}px) translateZ(0)`} : {}} className={`first-plan ${showLandscape}`}/>
-                    :
-                    <Plan1 style={scroll ? {transform: `translateY(-${scroll *0.6}px) translateZ(0)`} : {}} className={`first-plan ${showLandscape}`}/>
-                }
-                <Plan2 style={scroll ? {transform: `translateY(-${scroll *0.4}px) translateZ(0)`} : {}} className={`second-plan ${showLandscape}`} />
-                <Plan3 style={scroll ? {transform: `translateY(-${scroll *0.2}px) translateZ(0)`} : {}} className={`third-plan ${showLandscape}`} />
-                <Plan4 style={scroll ? {transform: `translateY(-${scroll *0.1}px) translateZ(0)`} : {}} className={`fourth-plan ${showLandscape}`} />
-                <Plan5 style={scroll ? {transform: `translateY(-${scroll *0.07}px) translateZ(0)`} : {}} className={`fifth-plan ${showLandscape}`} />
-                {window.innerWidth < 700 ?
-                    <BackgroundM style={scroll ? {transform: `translateY(-${scroll *0.05}px) translateZ(0)`} : {}} className={`background ${showLandscape}`} />
-                    :
-                    <Background style={scroll ? {transform: `translateY(-${scroll *0.05}px) translateZ(0)`} : {}} className={`background ${showLandscape}`} />
-                }
+                <AnimatedPlan1 style={scroll ? firstPlanAnimation: {} } className={`first-plan ${showLandscape}`} />
+                <AnimatedPlan2 style={scroll ? secondPlanAnimation : {} } className={`second-plan ${showLandscape}`} />
+                <AnimatedPlan3 style={scroll ? thirdPlanAnimation : {} } className={`third-plan ${showLandscape}`} />
+                <AnimatedPlan4 style={scroll ? fourthPlanAnimation : {} } className={`fourth-plan ${showLandscape}`} />
+                <AnimatedPlan5 style={scroll ? fifthPlanAnimation : {} } className={`fifth-plan ${showLandscape}`} />
+                <AnimatedBackground style={scroll ? backgroundAnimation: {} } className={`background ${showLandscape}`} />
             </div>
         </section>
     )
