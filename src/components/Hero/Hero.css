@@ -124,7 +124,7 @@
     transform: translateY(0) !important;
 }
 
-.scroll-sctive{
+.scroll-active{
     transition: transform .3s cubic-bezier(.22,1.12,1,.98);
 }
 

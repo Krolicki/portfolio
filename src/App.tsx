@@ -35,7 +35,7 @@ function App() {
 
   const handleScroll = throttle(() => {
       setScroll(window.scrollY)
-  }, 40)
+  }, 100)
   
   const scrollToComponent = (refName: RefName) => {
     const ref = refs[refName];
