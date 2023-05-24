@@ -55,32 +55,32 @@ export const Hero = forwardRef<HTMLDivElement, HeroProps>(({ globalScroll, setAn
     },[])
 
     useEffect(()=>{
-        if(globalScroll !== null && globalScroll < window.innerHeight * 0.75)
+        // if(globalScroll !== null && globalScroll < window.innerHeight * 0.75)
             setScroll(globalScroll)
     },[globalScroll])
 
     const firstPlanAnimation =  scroll ? {
-        transform: `translateY(-${scroll * 0.6}px) translateZ(0)`
+        transform: `translate3d(0px, -${scroll * 1}px, 0px)`
     } : {}
     const secondPlanAnimation = scroll ? {
-        transform: `translateY(-${scroll * 0.4}px) translateZ(0)`
+        transform: `translate3d(0px, -${scroll * 0.3}px, 0px)`
     } : {}
     const thirdPlanAnimation = scroll ? {
-        transform: `translateY(-${scroll * 0.2}px) translateZ(0)`
+        transform: `translate3d(0px, -${scroll * 0.2}px, 0px)`
     } : {}
     const fourthPlanAnimation = scroll ? {
-        transform: `translateY(-${scroll * 0.1}px) translateZ(0)`
+        transform: `translate3d(0px, -${scroll * 0.1}px, 0px)`
     } : {}
     const fifthPlanAnimation = scroll ? {
-        transform: `translateY(-${scroll * 0.07}px) translateZ(0)`
+        transform: `translate3d(0px, -${scroll * 0.05}px, 0px)`
     } : {}
     const backgroundAnimation = scroll ? {
-        transform: `translateY(-${scroll * 0.05}px) translateZ(0)`
+        transform: `translate3d(0px, -${scroll * 0.02}px, 0px)`
     } : {}
     
 
     return (
-        <section className='hero' ref={ref}>
+        <section className={`hero ${finalStage ? "final-stage" : ""}`} ref={ref}>
             <div className={`
                 text-wraper 
                 ${secondStage? "final-stage" : ""}`
@@ -99,7 +99,7 @@ export const Hero = forwardRef<HTMLDivElement, HeroProps>(({ globalScroll, setAn
                         ${firstStage ? "flip" : ""}
                         ${finalStage ? "final-stage" : ''}
                     `}
-                    style={scroll ? {transform: `translateY(${scroll *0.2}px)`} : {}}
+                    style={scroll ? {transform: `translateY(${scroll *0.5}px)`} : {}}
                 >
                     <p className='second-text'>
                         <span>Jestem</span>

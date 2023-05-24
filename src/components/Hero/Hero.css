@@ -5,6 +5,9 @@
     position: relative; 
     overflow: hidden;
 }
+.hero.final-stage{
+    margin-bottom: 50vh;
+}
 
 .text-wraper{
     width: 100%;
@@ -12,7 +15,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     position: relative;
     color: white; 
     z-index: 9;
@@ -73,11 +75,12 @@
 }
 
 .landscape{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .first-plan, .second-plan, .third-plan, .fourth-plan, .fifth-plan, .background{
@@ -89,8 +92,9 @@
 }
 
 .first-plan{
+    width: 100%;
     transform: translateY(-90%);
-    bottom: -56vw;
+    bottom: -80vw;
     z-index: 10;
 }
 
@@ -100,17 +104,17 @@
 }
 
 .third-plan{
-    bottom: -8vw;
+    bottom: -10vw;
     z-index: 7;
 }
 
 .fourth-plan{
-    bottom: -7vw;
+    bottom: -12vw;
     z-index: 6; 
 }
 
 .fifth-plan{
-    bottom: -7vw;
+    bottom: -9vw;
     z-index: 5; 
 }
 
@@ -125,7 +129,7 @@
 }
 
 .scroll-active{
-    transition: transform .3s cubic-bezier(.22,1.12,1,.98);
+    transition: none;
 }
 
 
