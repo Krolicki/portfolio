@@ -4,6 +4,11 @@
     /* background-color: black; */
     position: relative; 
     overflow: hidden;
+    z-index: -1
+}
+.hero.final-stage{
+    margin-bottom: 50vh;
+    overflow: unset;
 }
 
 .text-wraper{
@@ -12,10 +17,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     position: relative;
     color: white; 
-    z-index: 9;
 }
 
 .first-text-wraper{
@@ -37,7 +40,7 @@
 
 .second-text-wraper{
     font-size: 5vw;
-    position: absolute;
+    position: fixed;
     left: calc(50% - 30vw);
     width: 60vw;
     display: flex;
@@ -73,11 +76,13 @@
 }
 
 .landscape{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    z-index: -1;
 }
 
 .first-plan, .second-plan, .third-plan, .fourth-plan, .fifth-plan, .background{
@@ -89,8 +94,8 @@
 }
 
 .first-plan{
-    transform: translateY(-90%);
-    bottom: -56vw;
+    transform: translateY(-150%);
+    bottom: -80vw;
     z-index: 10;
 }
 
@@ -100,21 +105,22 @@
 }
 
 .third-plan{
-    bottom: -8vw;
+    bottom: -10vw;
     z-index: 7;
 }
 
 .fourth-plan{
-    bottom: -7vw;
+    bottom: -12vw;
     z-index: 6; 
 }
 
 .fifth-plan{
-    bottom: -7vw;
+    bottom: -9vw;
     z-index: 5; 
 }
 
 .background{
+    bottom: 0;
     width: 100%;
     height: auto;
     z-index: 4;
@@ -124,25 +130,29 @@
     transform: translateY(0) !important;
 }
 
-.scroll-sctive{
-    transition: transform .5s cubic-bezier(.22,1.12,1,.98);
+.scroll-active{
+    transition: none;
 }
 
 
 @media screen and (max-width: 700px){
+    .hero.final-stage{
+        margin-bottom: 0;
+    }
+    .landscape{
+        overflow: hidden;
+    }
     .second-plan, .third-plan, .fourth-plan, .fifth-plan, .background{
         transform: translateY(-300%);
         will-change: transform;
     }
-    .text-wraper{
+    /* .text-wraper{
         width: 102%;
         left: -1%;
-    }
+    } */
     .first-plan{
         transform: translateY(-120%);
         bottom: -170vw;
-        width: 104%;
-        left: -2%;
     }
     
     .second-plan{

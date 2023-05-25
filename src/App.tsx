@@ -35,7 +35,7 @@ function App() {
 
   const handleScroll = throttle(() => {
       setScroll(window.scrollY)
-  }, 50)
+  }, 10)
   
   const scrollToComponent = (refName: RefName) => {
     const ref = refs[refName];
@@ -56,14 +56,14 @@ function App() {
     <>
       <Hero globalScroll={scroll} setAnimationCompleted={setAnimationCompleted} ref={heroRef}/>
       {animationCompleted &&
-        <>
+        <div className='content-container'>
           <Navbar globalScroll={scroll} scrollToComponent={scrollToComponent}/>
           <About globalScroll={scroll} ref={aboutRef}/>
           <Projects ref={projectsRef}/>
           <GitHub ref={gitRef}/>
           <Contact ref={contactRef}/>
           <Footer />
-        </>
+        </div>
       }
     </>
   )

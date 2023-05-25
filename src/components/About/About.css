@@ -71,7 +71,7 @@
         grid-template-rows: auto 1fr;
         grid-column-gap: 5vw;
         grid-row-gap: 0px;
-        padding: 15vh 10vw;
+        padding: 0 10vw 15vh;
     }
     .about-header, .about-img{
         align-self: flex-start;
