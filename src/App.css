@@ -11,3 +11,8 @@
     background: rgb(28, 139, 138);
     cursor: pointer;
   }
+
+.content-container{
+  z-index: 100;
+  background-color: rgb(var(--first-plan));
+}

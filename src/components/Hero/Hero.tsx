@@ -21,12 +21,12 @@ type HeroProps = {
     setAnimationCompleted : React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const AnimatedPlan1 = animated(window.innerWidth < 700 ? Plan1m : Plan1)
+const AnimatedPlan1 = animated(Plan1)
 const AnimatedPlan2 = animated(Plan2)
 const AnimatedPlan3 = animated(Plan3)
 const AnimatedPlan4 = animated(Plan4)
 const AnimatedPlan5 = animated(Plan5)
-const AnimatedBackground = animated(window.innerWidth < 700 ? BackgroundM : Background)
+const AnimatedBackground = animated(window.innerWidth < 1200 ? BackgroundM : Background)
 
 export const Hero = forwardRef<HTMLDivElement, HeroProps>(({ globalScroll, setAnimationCompleted }, ref) => {
     const [loaded, setLoaded] = useState(false)
@@ -60,19 +60,19 @@ export const Hero = forwardRef<HTMLDivElement, HeroProps>(({ globalScroll, setAn
     },[globalScroll])
 
     const firstPlanAnimation =  scroll ? {
-        transform: `translate3d(0px, -${scroll * 1}px, 0px)`
+        transform: `translate3d(0px, -${scroll * 0.1}px, 0px)`
     } : {}
     const secondPlanAnimation = scroll ? {
-        transform: `translate3d(0px, -${scroll * 0.3}px, 0px)`
+        transform: `translate3d(0px, -${scroll * 0.35}px, 0px)`
     } : {}
     const thirdPlanAnimation = scroll ? {
         transform: `translate3d(0px, -${scroll * 0.2}px, 0px)`
     } : {}
     const fourthPlanAnimation = scroll ? {
-        transform: `translate3d(0px, -${scroll * 0.1}px, 0px)`
+        transform: `translate3d(0px, -${scroll * 0.07}px, 0px)`
     } : {}
     const fifthPlanAnimation = scroll ? {
-        transform: `translate3d(0px, -${scroll * 0.05}px, 0px)`
+        transform: `translate3d(0px, -${scroll * 0.03}px, 0px)`
     } : {}
     const backgroundAnimation = scroll ? {
         transform: `translate3d(0px, -${scroll * 0.02}px, 0px)`
@@ -99,7 +99,7 @@ export const Hero = forwardRef<HTMLDivElement, HeroProps>(({ globalScroll, setAn
                         ${firstStage ? "flip" : ""}
                         ${finalStage ? "final-stage" : ''}
                     `}
-                    style={scroll ? {transform: `translateY(${scroll *0.5}px)`} : {}}
+                    style={scroll ? {transform: `translateY(${scroll *0.1}px)`} : {}}
                 >
                     <p className='second-text'>
                         <span>Jestem</span>
@@ -107,15 +107,18 @@ export const Hero = forwardRef<HTMLDivElement, HeroProps>(({ globalScroll, setAn
                     </p>
                 </div>
             </div>
-            <div className='landscape'>
+            {/* <div className='landscape'> */}
                 {window.innerWidth > 700 ?
                     <>
+                    
                         <AnimatedPlan1 style={firstPlanAnimation} className={`first-plan ${showLandscape}`} />
+                        <div className='landscape'>
                         <AnimatedPlan2 style={scroll ? secondPlanAnimation : {} } className={`second-plan ${showLandscape}`} />
                         <AnimatedPlan3 style={scroll ? thirdPlanAnimation : {} } className={`third-plan ${showLandscape}`} />
                         <AnimatedPlan4 style={scroll ? fourthPlanAnimation : {} } className={`fourth-plan ${showLandscape}`} />
                         <AnimatedPlan5 style={scroll ? fifthPlanAnimation : {} } className={`fifth-plan ${showLandscape}`} />
                         <AnimatedBackground style={scroll ? backgroundAnimation: {} } className={`background ${showLandscape}`} />
+                        </div>
                     </>
                     :
                     <>
@@ -127,7 +130,7 @@ export const Hero = forwardRef<HTMLDivElement, HeroProps>(({ globalScroll, setAn
                         <img src={BackgroundMm} style={scroll ? backgroundAnimation: {} } className={`background ${showLandscape}`} />
                     </>
                 }
-            </div>
+            {/* </div> */}
         </section>
     )
 })
