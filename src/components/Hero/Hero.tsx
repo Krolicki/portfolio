@@ -2,6 +2,7 @@ import { forwardRef, useEffect, useState } from 'react'
 import { animated } from 'react-spring';
 import './Hero.css'
 import { ReactComponent as Plan1 } from './assets/plan1.svg'
+import { ReactComponent as Plan1full } from './assets/plan1full.svg'
 import { ReactComponent as Plan1m } from './assets/plan1m.svg'
 import { ReactComponent as Plan2 } from './assets/plan2.svg'
 import { ReactComponent as Plan3 } from './assets/plan3.svg'
@@ -109,25 +110,24 @@ export const Hero = forwardRef<HTMLDivElement, HeroProps>(({ globalScroll, setAn
             </div>
             {/* <div className='landscape'> */}
                 {window.innerWidth > 700 ?
-                    <>
-                    
-                        <AnimatedPlan1 style={firstPlanAnimation} className={`first-plan ${showLandscape}`} />
-                        <div className='landscape'>
-                        <AnimatedPlan2 style={scroll ? secondPlanAnimation : {} } className={`second-plan ${showLandscape}`} />
-                        <AnimatedPlan3 style={scroll ? thirdPlanAnimation : {} } className={`third-plan ${showLandscape}`} />
-                        <AnimatedPlan4 style={scroll ? fourthPlanAnimation : {} } className={`fourth-plan ${showLandscape}`} />
-                        <AnimatedPlan5 style={scroll ? fifthPlanAnimation : {} } className={`fifth-plan ${showLandscape}`} />
-                        <AnimatedBackground style={scroll ? backgroundAnimation: {} } className={`background ${showLandscape}`} />
-                        </div>
-                    </>
+                        <>
+                            <Plan1 className={`first-plan ${secondStage ? "show-first-plan" : ""}`} />
+                            <div className='landscape'>
+                                <AnimatedPlan2 style={scroll ? secondPlanAnimation : {} } className={`second-plan ${showLandscape}`} />
+                                <AnimatedPlan3 style={scroll ? thirdPlanAnimation : {} } className={`third-plan ${showLandscape}`} />
+                                <AnimatedPlan4 style={scroll ? fourthPlanAnimation : {} } className={`fourth-plan ${showLandscape}`} />
+                                <AnimatedPlan5 style={scroll ? fifthPlanAnimation : {} } className={`fifth-plan ${showLandscape}`} />
+                                <AnimatedBackground style={scroll ? backgroundAnimation: {} } className={`background ${showLandscape}`} />
+                            </div>
+                        </>
                     :
                     <>
-                        <img src={Plan1m2} style={scroll ? firstPlanAnimation: {} } className={`first-plan ${showLandscape}`} />
-                        <img src={Plan2m} style={scroll ? secondPlanAnimation : {} } className={`second-plan ${showLandscape}`} />
-                        <img src={Plan3m} style={scroll ? thirdPlanAnimation : {} } className={`third-plan ${showLandscape}`} />
-                        <img src={Plan4m} style={scroll ? fourthPlanAnimation : {} } className={`fourth-plan ${showLandscape}`} />
-                        <img src={Plan5m} style={scroll ? fifthPlanAnimation : {} } className={`fifth-plan ${showLandscape}`} />
-                        <img src={BackgroundMm} style={scroll ? backgroundAnimation: {} } className={`background ${showLandscape}`} />
+                        <img src={Plan1m2}  className={`first-plan ${secondStage ? "show-first-plan" : ""}`} />
+                        <img src={Plan2m}  className={`second-plan ${secondStage ? "show-first-plan" : ""}`} />
+                        <img src={Plan3m}  className={`third-plan ${secondStage ? "show-first-plan" : ""}`} />
+                        <img src={Plan4m}  className={`fourth-plan ${secondStage ? "show-first-plan" : ""}`} />
+                        <img src={Plan5m}  className={`fifth-plan ${secondStage ? "show-first-plan" : ""}`} />
+                        <img src={BackgroundMm}  className={`background ${secondStage ? "show-first-plan" : ""}`} />
                     </>
                 }
             {/* </div> */}
