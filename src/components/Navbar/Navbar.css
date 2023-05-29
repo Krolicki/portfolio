@@ -51,7 +51,7 @@ nav{
     border-radius: 4vw;
     margin-inline: auto;
     padding: 6vh 0 26vh;
-    transform: translateY(100%);
+    transform: translate3d(0, 100% ,0);
     transition: transform .4s cubic-bezier(.31,0,0,.98);
     will-change: transform;
 }
@@ -59,7 +59,7 @@ nav{
     padding: 2vh 10vw;
 }
 .show-menu{
-    transform: translateY(0%);
+    transform: translate3d(0, 0 ,0);
 }
 
 @media screen and (min-width: 700px){

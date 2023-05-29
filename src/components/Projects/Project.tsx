@@ -1,5 +1,5 @@
 import { projectType } from './Projects'
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState, useEffect, TouchEventHandler  } from 'react'
 import './Projects.css'
 
 type ProjectProps = {
@@ -13,6 +13,36 @@ export const Project = ({project, flip} : ProjectProps) => {
     const containerRef = useRef<HTMLDivElement | null>(null)
     const observerRef = useRef<IntersectionObserver | null>(null)
     const intervalRef = useRef<number | null>(null)
+
+    const [touchPosition, setTouchPosition] = useState<number | null>(null)
+
+    const handleTouchStart : TouchEventHandler<HTMLSpanElement> = (e) => {
+      const touchDown = e.touches[0].clientX
+      setTouchPosition(touchDown)
+    }
+
+    const handleTouchMove : TouchEventHandler<HTMLSpanElement> = (e) => {
+      const touchDown = touchPosition
+  
+      if(touchDown === null) {
+          return
+      }
+  
+      const currentTouch = e.touches[0].clientX
+      const diff = touchDown - currentTouch
+  
+      if (diff > 5) {
+        if (slidePhotoRef.current !== project.images.length - 1)
+          changeSlide(slidePhotoRef.current + 1)
+      }
+  
+      if (diff < -5) {
+        if (slidePhotoRef.current !== 0)
+          changeSlide(slidePhotoRef.current - 1)
+      }
+  
+      setTouchPosition(null)
+  }
 
     useEffect(() => {
         observerRef.current = new IntersectionObserver((entries) => {
@@ -68,7 +98,12 @@ export const Project = ({project, flip} : ProjectProps) => {
             <h2>{project.title}</h2>
             <div className='project-photos'>
               <div className='project-images-slider'>
-                  <span className='project-images' style={{transform: `translateX(-${slidePhoto * 100}%)`}}>
+                  <span 
+                    className='project-images' 
+                    style={{transform: `translateX(-${slidePhoto * 100}%)`}}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                  >
                       {project.images.map((image, index) =>{
                           return <img alt={image} src={`/projectsImages/${image}`} key={index}/>
                       })}
