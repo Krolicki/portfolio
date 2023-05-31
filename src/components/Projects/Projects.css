@@ -115,4 +115,40 @@
         grid-area: 4 / 1 / 5 / 2;
         gap: 1vw;
     }
+    .project-images-slider img{
+        cursor: pointer;
+    }
+    .show-photo-wraper{
+        position: fixed;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.466);
+        backdrop-filter: blur(10px);
+        z-index: 90;
+        padding: 5vh 5vw;
+    }
+    .show-photo-wraper span{
+        position: absolute;
+        top:0;
+        right: 0;
+        padding: 2vw;
+        font-size: 4vw;
+        line-height: 2vw;
+        user-select: none;
+        cursor: pointer;
+        transition: transform .2s;
+    }
+    .show-photo-wraper span:hover{
+        transform: scale(1.3);
+    }
+    .show-photo-wraper img{
+        user-select: none;
+        pointer-events: none;
+        max-width: 100%;
+        max-height: 100%;
+    }
 }

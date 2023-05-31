@@ -5,9 +5,10 @@ import './Projects.css'
 type ProjectProps = {
   project : projectType
   flip: boolean
+  setPhoto:  React.Dispatch<React.SetStateAction<string | null>>
 }
 
-export const Project = ({project, flip} : ProjectProps) => {
+export const Project = ({project, flip, setPhoto} : ProjectProps) => {
     const [slidePhoto, setSlidePhoto] = useState(0)
     const slidePhotoRef = useRef(0)
     const containerRef = useRef<HTMLDivElement | null>(null)
@@ -105,7 +106,7 @@ export const Project = ({project, flip} : ProjectProps) => {
                     onTouchMove={handleTouchMove}
                   >
                       {project.images.map((image, index) =>{
-                          return <img alt={image} src={`/projectsImages/${image}`} key={index}/>
+                          return <img alt={image} src={`/projectsImages/${image}`} key={index} onClick={() => setPhoto(image)}/>
                       })}
                   </span>
               </div>

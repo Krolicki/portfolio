@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import { forwardRef, useState } from 'react'
 import { Project } from './Project'
 import './Projects.css'
 
@@ -76,16 +76,27 @@ const projectsList : projectType[] = [
     }
 ]
 
-
 export const Projects = forwardRef<HTMLDivElement>((_,ref) => {
+    const [photoToShow, setPhotoToShow] = useState<string | null>(null)
+
+    const showPhoto = (url : string) => {
+
+    }
+
     return(
         <section className='projects-wraper' ref={ref}>
             <h1>Moje projekty</h1>
             {projectsList.map((project, index)=>{
                 return(
-                    <Project project={project} flip={index % 2 === 1} key={project.title}/>
+                    <Project project={project} flip={index % 2 === 1} key={project.title} setPhoto={setPhotoToShow}/>
                 )
             })}
+            {photoToShow && window.innerWidth > 920 &&
+                <div className='show-photo-wraper'>
+                    <img alt={photoToShow} src={`/projectsImages/${photoToShow}`} draggable="false" onDragStart={()=> {return false}}/>
+                    <span onClick={()=> setPhotoToShow(null)}>x</span>
+                </div>
+            }
         </section>
     )
 })
