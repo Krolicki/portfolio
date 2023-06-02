@@ -49,7 +49,7 @@
     text-align: center;
     transform: rotateY(180deg);
     backface-visibility: hidden;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(1px);
     transition: transform .7s cubic-bezier(.22,1.12,1,.98),
                 background-color .5s ease-in;
     background-color: rgb(35, 74, 141);

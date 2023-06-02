@@ -79,10 +79,6 @@ const projectsList : projectType[] = [
 export const Projects = forwardRef<HTMLDivElement>((_,ref) => {
     const [photoToShow, setPhotoToShow] = useState<string | null>(null)
 
-    const showPhoto = (url : string) => {
-
-    }
-
     return(
         <section className='projects-wraper' ref={ref}>
             <h1>Moje projekty</h1>
