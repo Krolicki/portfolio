@@ -2,8 +2,6 @@ import { forwardRef, useEffect, useState } from 'react'
 import { animated } from 'react-spring';
 import './Hero.css'
 import { ReactComponent as Plan1 } from './assets/plan1.svg'
-import { ReactComponent as Plan1full } from './assets/plan1full.svg'
-import { ReactComponent as Plan1m } from './assets/plan1m.svg'
 import { ReactComponent as Plan2 } from './assets/plan2.svg'
 import { ReactComponent as Plan3 } from './assets/plan3.svg'
 import { ReactComponent as Plan4 } from './assets/plan4.svg'
@@ -22,7 +20,6 @@ type HeroProps = {
     setAnimationCompleted : React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const AnimatedPlan1 = animated(Plan1)
 const AnimatedPlan2 = animated(Plan2)
 const AnimatedPlan3 = animated(Plan3)
 const AnimatedPlan4 = animated(Plan4)
@@ -56,13 +53,13 @@ export const Hero = forwardRef<HTMLDivElement, HeroProps>(({ globalScroll, setAn
     },[])
 
     useEffect(()=>{
-        // if(globalScroll !== null && globalScroll < window.innerHeight * 0.75)
+        if(globalScroll !== null && globalScroll < window.innerHeight * 2)
             setScroll(globalScroll)
     },[globalScroll])
 
-    const firstPlanAnimation =  scroll ? {
-        transform: `translate3d(0px, -${scroll * 0.1}px, 0px)`
-    } : {}
+    // const firstPlanAnimation =  scroll ? {
+    //     transform: `translate3d(0px, -${scroll * 0.1}px, 0px)`
+    // } : {}
     const secondPlanAnimation = scroll ? {
         transform: `translate3d(0px, -${scroll * 0.35}px, 0px)`
     } : {}
