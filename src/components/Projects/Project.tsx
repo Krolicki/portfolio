@@ -106,12 +106,12 @@ export const Project = ({project, flip, setPhoto} : ProjectProps) => {
                     onTouchMove={handleTouchMove}
                   >
                       {project.images.map((image, index) =>{
-                          return <img alt={image} src={`/projectsImages/${image}`} key={index} onClick={() => setPhoto(image)}/>
+                          return <img alt={image} src={`projectsImages/${image}`} key={index} onClick={() => setPhoto(image)}/>
                       })}
                   </span>
               </div>
               <div className='project-slider-dots' ref={containerRef}>
-                      {project.images.map((image, index) => (
+                      {project.images.map((_, index) => (
                           <span
                               key={index}
                               className={`dot ${index === slidePhoto ? "active-dot" : ""}`}
