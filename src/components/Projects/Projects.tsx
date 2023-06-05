@@ -89,7 +89,7 @@ export const Projects = forwardRef<HTMLDivElement>((_,ref) => {
             })}
             {photoToShow && window.innerWidth > 920 &&
                 <div className='show-photo-wraper'>
-                    <img alt={photoToShow} src={`/projectsImages/${photoToShow}`} draggable="false" onDragStart={()=> {return false}}/>
+                    <img alt={photoToShow} src={`projectsImages/${photoToShow}`} draggable="false" onDragStart={()=> {return false}}/>
                     <span onClick={()=> setPhotoToShow(null)}>x</span>
                 </div>
             }
