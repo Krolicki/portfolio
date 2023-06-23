@@ -14,6 +14,7 @@ import Plan3m from './assets/plan3.png'
 import Plan4m from './assets/plan4.png'
 import Plan5m from './assets/plan5.png'
 import BackgroundMm from './assets/backgroundm.png'
+import { useTranslation } from 'react-i18next';
 
 type HeroProps = {
     globalScroll : number | null
@@ -35,6 +36,8 @@ export const Hero = forwardRef<HTMLDivElement, HeroProps>(({ globalScroll, setAn
     const [scroll, setScroll] = useState<number | null>(null)
 
     const showLandscape = secondStage ? !scroll ? "show-first-plan" : "scroll-active" : ""
+
+    const { t } = useTranslation()
 
     useEffect(()=>{
         setTimeout(()=>{
@@ -89,7 +92,7 @@ export const Hero = forwardRef<HTMLDivElement, HeroProps>(({ globalScroll, setAn
                         ${loaded ? "show-up" : ""}
                         ${firstStage ? "flip" : ""}
                     `}>
-                        Witaj
+                        {t('hero.first-text')}
                     </p>
                 </div>
                 <div className={`
@@ -100,7 +103,7 @@ export const Hero = forwardRef<HTMLDivElement, HeroProps>(({ globalScroll, setAn
                     style={scroll ? {transform: `translateY(${scroll *0.1}px)`} : {}}
                 >
                     <p className='second-text'>
-                        <span>Jestem</span>
+                        <span>{t('hero.second-text')}</span>
                         Jakub Królicki
                     </p>
                 </div>
