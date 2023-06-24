@@ -1,39 +1,42 @@
 import { useEffect, useRef, useState } from 'react'
 import './Navbar.css'
+import { useTranslation } from 'react-i18next';
 
 type SectionType = {
     title: string
     link: string
 }
 
-const Sections : SectionType[]= [
-    {
-        title: "Start",
-        link: "hero"
-    },
-    {
-        title: "O mnie",
-        link: "about"
-    },
-    {
-        title: "Projekty",
-        link: "projects"
-    },
-    {
-        title: "GitHub",
-        link: "github"
-    },
-    {
-        title: "Kontakt",
-        link: "contact"
-    }
-]
-
 export const Navbar = ({globalScroll, scrollToComponent} : {globalScroll : number | null, scrollToComponent : (link : string) => void}) => {
     const [menuClick, setMenuClick] = useState(false)
     const [scrollDown, setScrollDown] = useState(false)
 
     const lastScroll = useRef(0)
+
+    const { t } = useTranslation()
+
+    const Sections : SectionType[]= [
+        {
+            title: t('navbar.home'),
+            link: "hero"
+        },
+        {
+            title: t('navbar.about'),
+            link: "about"
+        },
+        {
+            title: t('navbar.projects'),
+            link: "projects"
+        },
+        {
+            title: "GitHub",
+            link: "github"
+        },
+        {
+            title: t('navbar.contact'),
+            link: "contact"
+        }
+    ]
 
     useEffect(()=>{
         if(globalScroll){

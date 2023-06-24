@@ -13,12 +13,10 @@ html, body, *{
 html, body{
   width: 100%;
   height: 100%;
-
 }
 body{
-  overflow: overlay;
   background-color: rgb(var(--first-plan));
-  overflow-x: hidden;
+  overflow: overlay;
 }
 #root{
   overflow-x: hidden;

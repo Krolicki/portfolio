@@ -113,7 +113,7 @@ export const Hero = forwardRef<HTMLDivElement, HeroProps>(({ globalScroll, setAn
                         <>
                             <Plan1 className={`first-plan ${secondStage ? "show-first-plan" : ""}`} />
                             <div className='landscape'>
-                                <AnimatedPlan2 style={scroll ? secondPlanAnimation : {} } className={`second-plan ${showLandscape}`} />
+                                <AnimatedPlan2 style={scroll ? secondPlanAnimation : {}} className={`second-plan ${showLandscape}`} />
                                 <AnimatedPlan3 style={scroll ? thirdPlanAnimation : {} } className={`third-plan ${showLandscape}`} />
                                 <AnimatedPlan4 style={scroll ? fourthPlanAnimation : {} } className={`fourth-plan ${showLandscape}`} />
                                 <AnimatedPlan5 style={scroll ? fifthPlanAnimation : {} } className={`fifth-plan ${showLandscape}`} />

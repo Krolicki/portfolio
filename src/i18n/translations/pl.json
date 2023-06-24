@@ -1,6 +1,27 @@
 {
+    "navbar": {
+        "home": "Start",
+        "about": "O mnie",
+        "projects": "Projekty",
+        "contact": "Kontakt"
+    },
     "hero" : {
         "first-text": "Witaj",
         "second-text": "Jestem"
+    },
+    "about" : {
+        "header": "Kto",
+        "content": {
+            "l1": "Jestem <b>Inżynierem Informatyki</b>, obecnie pracuję jako wsparcie techniczne.",
+            "l2": "<b>Pomagam</b> ludziom z problemami software'owymi i hardware'owymi, <b> wdrażam</b> nowe rozwiązania, <b>konfiguruję</b> komputery, serwery i inne sprzęty.",
+            "l3": "<b>Zarządzam</b> użytkownikami i prawami dostępu, <b>administruję</b> systemem monitoringu i...",
+            "l4": "Długo by opowiadać!",
+            "l5": "Rok temu zacząłem doskonalić swoje umiejętności programowania.",
+            "l6": "Po spróbowaniu Pythona postanowiłem pójść we <b>Front-End.</b>",
+            "l7": "Obecnie znam <b>React</b> z JavaScript i Typescript oraz podstawy Redux"
+        }
+    },
+    "projects" : {
+        "title": "Moje projekty"
     }
 }

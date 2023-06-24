@@ -96,6 +96,7 @@
     transform: translateY(150%);
     bottom: calc(-50vh - 3px);
     z-index: 10;
+    width: 101%;
 }
 .second-plan{
     bottom: -22vw;
@@ -110,6 +111,7 @@
 .fourth-plan{
     bottom: -12vw;
     z-index: 6; 
+    width: 101%;
 }
 
 .fifth-plan{

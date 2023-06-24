@@ -1,6 +1,7 @@
 import { forwardRef, useState } from 'react'
 import { Project } from './Project'
 import './Projects.css'
+import { useTranslation } from 'react-i18next';
 
 export type projectType = {
     title: string
@@ -79,9 +80,11 @@ const projectsList : projectType[] = [
 export const Projects = forwardRef<HTMLDivElement>((_,ref) => {
     const [photoToShow, setPhotoToShow] = useState<string | null>(null)
 
+    const { t } = useTranslation()
+
     return(
         <section className='projects-wraper' ref={ref}>
-            <h1>Moje projekty</h1>
+            <h1>{t('projects.title')}</h1>
             {projectsList.map((project, index)=>{
                 return(
                     <Project project={project} flip={index % 2 === 1} key={project.title} setPhoto={setPhotoToShow}/>
