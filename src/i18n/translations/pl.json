@@ -22,6 +22,36 @@
         }
     },
     "projects" : {
-        "title": "Moje projekty"
+        "header": "Moje projekty",
+        "project": {
+            "jednosc": {
+                "title": "Jedność Gorlice",
+                "description": "Strona internetowa dla Spółdzielni Produkcyjno-Handlowej \"JEDNOŚĆ\" w Gorlicach.\nOpisuje historę firmy, zakłady produkcyjne, produkty piekarskie i cukiernicze oraz placówki.\nObecnie nie jest dostępna, została zmieniona."
+            },
+            "forum": {
+                "title": "Forum",
+                "description": "Strona \"Landing Page\" z forum.\nUmożliwia logowanie, rejestrację, dodawanie postów, edytowanie ich i usuwanie. Zawiera profile użytkowników ze statystykami, ranking najlepszych postów, wyszukiwarkę i podział postów na strony.\nTo mój najbardziej rozwinięty projekt."
+            },
+            "multiStepForm": {
+                "title": "Wielokrokowy Formularz",
+                "description": "Formularz z walidacją pól (adres email, hasło, data urodzenia, zgody) i paskiem postępu.\nPosiada dwie wersje językowe: polski i angielski."
+            },
+            "weatherApp": {
+                "title": "Aplikacja Pogodowa",
+                "description": "Aplikacja pogodowa z prognozą na 5 dni."
+            },
+            "photoEditor": {
+                "title": "Edytor zdjęć",
+                "description": "Pozwala na edytowanie zdjęć filtrami CSS i zapisywanie plików przy użyciu HTML Canvas.\nZdjęcia można przesłać lub wybrać z niekończońcej się ściany zdjęć pobieranych z Unsplash.com."
+            },
+            "raspberryPi": {
+                "title": "Raspberry Pi",
+                "description": "Tworzę także aplikacje i systemy na Raspberry Pi.\nWykonałem m.in. sterowanie roletami okiennymi, sterowanie światłem, system alarmowy z czujnikami ruchu, czujnikiem otwarcia drzwi i kartami dostępu."
+            }
+        },
+        "ref": {
+            "website": "Link do strony",
+            "repo": "Link do repozytorium"
+        }
     }
 }
