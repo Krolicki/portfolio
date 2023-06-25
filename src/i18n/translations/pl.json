@@ -54,5 +54,10 @@
             "repo": "Link do repozytorium",
             "unavailable": "Link niedostępny"
         }
+    },
+    "github": "Sprawdź wszystkie moje projekty i to nad czym aktualnie pracuję na",
+    "contact": {
+        "header": "Poznamy się?",
+        "content": "Jeśli zainteresowała Cię moja praca, możesz skontaktować się za mną mailowo, lub odwiedzić mój profil na "
     }
 }
