@@ -124,7 +124,11 @@ export const Project = ({project, flip, setPhoto} : ProjectProps) => {
             </div>
             <p>{(project.description)}</p>
             <span className='link'>
+              {project.unavailable ? 
+                <b>{project.ref.desc}</b>
+                :
                 <a href={`${project.ref.link}`} target='_blank'><b>{project.ref.desc}</b></a>
+              }
             </span>
             <div className='project-technologies'>
                 {project.technologies.map((technology) =>{

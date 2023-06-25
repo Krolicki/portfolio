@@ -12,6 +12,7 @@ export type projectType = {
         link: string
     }
     technologies: string[]
+    unavailable?: boolean
 }
 
 export const Projects = forwardRef<HTMLDivElement>((_,ref) => {
@@ -25,10 +26,11 @@ export const Projects = forwardRef<HTMLDivElement>((_,ref) => {
             images: ["jednosc1.png", "jednosc2.png", "jednosc3.png", "jednosc4.png"],
             description: t('projects.project.jednosc.description'),
             ref:{
-                desc: t('projects.ref.website'),
-                link: "https://www.jednosc.gorlice.pl/"
+                desc: t('projects.ref.unavailable'),
+                link: ""
             },
-            technologies: ["React", "JavaScript", "React Router", "React Helmet"]
+            technologies: ["React", "JavaScript", "React Router", "React Helmet"],
+            unavailable: true
         },
         {
             title: t('projects.project.forum.title'),
