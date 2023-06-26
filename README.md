@@ -1,5 +1,5 @@
-# To moje portfolio, strona o mnie i o moich projektach.
+# This is my portfolio, a page about me and my projects.
 
-**Można je zobaczyć na [GitHub Pages](https://krolicki.github.io/portfolio/).**
+**You can see it on [GitHub Pages](https://krolicki.github.io/portfolio/).**
 
-*English version in progress*
+*Available in Polish and English*
