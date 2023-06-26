@@ -52,6 +52,7 @@
         "ref": {
             "website": "Link do strony",
             "repo": "Link do repozytorium",
+            "repos": "Link do repozytoriów",
             "unavailable": "Link niedostępny"
         }
     },

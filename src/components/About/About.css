@@ -12,7 +12,8 @@
 }
 
 .about-header{
-    font-size: 12vw;
+    font-size: 14vw;
+    font-weight: bolder;
 }
 .about-img-wraper{
     position: relative;
@@ -72,6 +73,10 @@
         grid-column-gap: 5vw;
         grid-row-gap: 0px;
         padding: 0 10vw 15vh;
+    }
+    .about-header{
+        font-size: 12vw;
+        font-family: consolas, monospace;
     }
     .about-header, .about-img{
         align-self: flex-start;

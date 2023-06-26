@@ -77,7 +77,7 @@ export const Projects = forwardRef<HTMLDivElement>((_,ref) => {
             images: ["rasp1.png", "rasp2.png", "rasp3.png"],
             description: t('projects.project.raspberryPi.description'),
             ref:{
-                desc: t('projects.ref.repo'),
+                desc: t('projects.ref.repos'),
                 link: "https://github.com/Krolicki?tab=repositories&q=raspberry&type=&language=&sort="
             },
             technologies: ["Python", "Raspberry Pi", "Flask", "Javascript"]

@@ -1,0 +1,64 @@
+{
+    "navbar": {
+        "home": "Home",
+        "about": "About",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "hero" : {
+        "first-text": "Hello",
+        "second-text": "I am"
+    },
+    "about" : {
+        "header": "Who",
+        "content": {
+            "l1": "I am <b>IT Engineer</b>, I'm currently working as technical support.",
+            "l2": "<b>I help</b> people with software and hardware problems, <b> I implement</b> new solutions, <b>configure</b> computers, servers and other equipment.",
+            "l3": "<b>I manage</b> users and access rights, <b>administer</b> the monitoring system and...",
+            "l4": "It would be a lot to tell!",
+            "l5": "Over a year ago I started to improve my programming skills.",
+            "l6": "After trying Python, I decided to go into <b>Front-End.</b>",
+            "l7": "I currently know <b>React</b> with JavaScript and Typescript, the basics of Redux and unit testing"
+        }
+    },
+    "projects" : {
+        "header": "My projects",
+        "project": {
+            "jednosc": {
+                "title": "Jedność Gorlice",
+                "description": "Website for the \"JEDNOŚĆ\" Production and Trade Cooperative in Gorlice, Poland.\nDescribes the history of the company, production plants, bakery and confectionery products and facilities.\nCurrently not available, has been changed."
+            },
+            "forum": {
+                "title": "Forum",
+                "description": "The \"Landing Page\" with forum.\nAllows you to login, register, add, edit and delete posts. Contains user profiles with statistics, top post ranking, search engine and pagination.\nThis is my most developed project."
+            },
+            "multiStepForm": {
+                "title": "Multi-step Form",
+                "description": "Form with field validation (email address, password, date of birth, consent) and progress bar.\nIt has two language versions: English and Polish."
+            },
+            "weatherApp": {
+                "title": "Weather app",
+                "description": "Weather app with 5 day forecast."
+            },
+            "photoEditor": {
+                "title": "Photo Editor",
+                "description": "Allows you to edit images with CSS filters and save files using HTML Canvas.\nYou can upload images or choose from an endless wall of images dynamically downloaded from Unsplash.com."
+            },
+            "raspberryPi": {
+                "title": "Raspberry Pi",
+                "description": "I also create applications and systems on the Raspberry Pi.\nI have made, among others, control of window blinds, light control, alarm system with motion sensors, door opening sensor and access cards."
+            }
+        },
+        "ref": {
+            "website": "Link to the page",
+            "repo": "Link to the repository",
+            "repos": "Link to repositories",
+            "unavailable": "Link unavailable"
+        }
+    },
+    "github": "Check out all my projects and what I'm currently working on",
+    "contact": {
+        "header": "Friends?",
+        "content": "If you are interested in my work, you can contact me by e-mail or visit my profile on "
+    }
+}
