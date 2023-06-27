@@ -82,6 +82,42 @@ nav{
     .nav-items span{
         padding: 2vh 2vw;
         cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+    .nav-items span::before{
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: .5vh;
+        background-color: black;
+        opacity: 0;
+        transition: opacity .5s;
+        will-change: opacity;
+    }
+    .nav-items span.active::before{
+        opacity: 1;
+    }
+    .nav-items span::after{
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        width: 80%;
+        height: 80%;
+        border-radius: 5vh;
+        background-color: rgba(255, 255, 255, 0.498);
+        opacity: 0;
+        transition: opacity .5s;
+        will-change: opacity;
+        z-index: -1;
+    }
+    .nav-items span:hover::after{
+        opacity: 1;
     }
     .nav-items.scroll-down{
         transform: translateY(calc(100% + 2vh));
