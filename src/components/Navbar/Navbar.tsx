@@ -7,7 +7,13 @@ type SectionType = {
     link: string
 }
 
-export const Navbar = ({globalScroll, scrollToComponent} : {globalScroll : number | null, scrollToComponent : (link : string) => void}) => {
+type NavbarType = {
+    globalScroll : number | null
+    scrollToComponent : (link : string) => void
+    intersectedView : string
+}
+
+export const Navbar = ({globalScroll, scrollToComponent, intersectedView} : NavbarType) => {
     const [menuClick, setMenuClick] = useState(false)
     const [scrollDown, setScrollDown] = useState(false)
 
@@ -66,6 +72,7 @@ export const Navbar = ({globalScroll, scrollToComponent} : {globalScroll : numbe
                                     setMenuClick(false)
                                 }}
                                 key={section.link}
+                                className={`${intersectedView === (section.link).toLowerCase() ? "active" : ""}`}
                             >{section.title}</span>
                         )
                     })}

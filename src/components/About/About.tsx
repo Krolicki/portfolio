@@ -1,10 +1,21 @@
-import { forwardRef } from 'react'
+import { forwardRef, useEffect } from 'react'
 import './About.css'
 import aboutPhoto from './me.jpg'
 import { useTranslation } from 'react-i18next';
 
 export const About = forwardRef<HTMLDivElement, {globalScroll : number | null}>(({globalScroll}, ref) => {
     const { t } = useTranslation()
+
+    // useEffect(()=>{
+    //     const observer = new IntersectionObserver(
+    //         ([entry]) => {
+    //             if(entry.isIntersecting)
+    //                 setIsIntersecting(entry.isIntersecting);
+    //         }
+    //       );
+    //     if(ref)
+    //         observer.observe(ref.current);
+    // },[])
 
     return(
         <section className='about-wraper' ref={ref}>

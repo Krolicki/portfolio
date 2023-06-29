@@ -90,16 +90,19 @@ nav{
         display: inline-block;
         position: absolute;
         bottom: 0;
-        left: 0;
-        width: 100%;
-        height: .5vh;
+        left: 10%;
+        width: 80%;
+        height: .7vh;
         background-color: black;
+        border-radius: 30px;
         opacity: 0;
-        transition: opacity .5s;
+        transform: translateY(100%);
+        transition: opacity .4s, transform .4s;
         will-change: opacity;
     }
     .nav-items span.active::before{
         opacity: 1;
+        transform: translateY(0%);
     }
     .nav-items span::after{
         content: "";

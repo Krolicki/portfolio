@@ -18,6 +18,7 @@ type RefName = keyof Refs;
 function App() {
   const [scroll, setScroll] = useState<number | null>(null)
   const [animationCompleted, setAnimationCompleted] = useState(false)
+  const [intersectedView, setIntersectedView] = useState<string>("")
 
   const heroRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -32,6 +33,11 @@ function App() {
     github: gitRef,
     contact: contactRef
   }
+
+  const observers : {
+    observer : IntersectionObserver 
+    ref: React.RefObject<HTMLDivElement>
+  }[] = []
 
   const handleScroll = throttle(() => {
       setScroll(window.scrollY)
@@ -49,15 +55,39 @@ function App() {
 
       return(()=>{
           window.removeEventListener('scroll', handleScroll)
+
+          observers.forEach(element => {
+            if(element.observer)
+              element.observer.disconnect()
+          })
       })
     },[])
+
+    useEffect(()=>{
+      for(let [name, ref] of Object.entries(refs)){
+        let observer = new IntersectionObserver(
+          ([entry]) => {
+            if(entry.isIntersecting)
+              setIntersectedView(name)
+          },
+          { rootMargin: "-50%" }
+        )
+        if(ref.current)
+          observer.observe(ref.current)
+        observers.push( 
+          {
+            observer: observer,
+            ref: ref
+        })
+      }
+    },[animationCompleted])
 
   return (
     <>
       <Hero globalScroll={scroll} setAnimationCompleted={setAnimationCompleted} ref={heroRef}/>
       {animationCompleted &&
         <div className='content-container'>
-          <Navbar globalScroll={scroll} scrollToComponent={scrollToComponent}/>
+          <Navbar globalScroll={scroll} scrollToComponent={scrollToComponent} intersectedView={intersectedView}/>
           <About globalScroll={scroll} ref={aboutRef}/>
           <Projects ref={projectsRef}/>
           <GitHub ref={gitRef}/>
