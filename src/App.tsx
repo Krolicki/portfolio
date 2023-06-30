@@ -21,6 +21,9 @@ function App() {
   const [pageLoaded, setPageLoaded] = useState(false)
   const [intersectedView, setIntersectedView] = useState<string>("")
 
+  const [scrollDown, setScrollDown] = useState(false)
+  const lastScroll = useRef(0)
+
   const heroRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
@@ -41,7 +44,22 @@ function App() {
   }[] = []
 
   const handleScroll = throttle(() => {
-      setScroll(window.scrollY)
+      let globalScroll = window.scrollY
+
+      setScroll(globalScroll)
+
+      let scrollDirection = false
+      if(globalScroll <= 0){
+        scrollDirection = false
+      }
+      if(globalScroll > lastScroll.current){
+        scrollDirection = true
+      }
+      if(globalScroll < lastScroll.current){
+        scrollDirection = false
+      }
+      lastScroll.current = globalScroll
+      setScrollDown((down) => down !== scrollDirection ? scrollDirection : down)
   }, 10)
   
   const scrollToComponent = (refName: RefName) => {
@@ -89,7 +107,7 @@ function App() {
       {animationCompleted &&
         <div className='content-container'>
           {pageLoaded &&
-            <Navbar globalScroll={scroll} scrollToComponent={scrollToComponent} intersectedView={intersectedView}/>
+            <Navbar scrollDown={scrollDown} scrollToComponent={scrollToComponent} intersectedView={intersectedView}/>
           }
           <About globalScroll={scroll} ref={aboutRef}/>
           <Projects ref={projectsRef}/>
