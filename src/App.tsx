@@ -18,6 +18,7 @@ type RefName = keyof Refs;
 function App() {
   const [scroll, setScroll] = useState<number | null>(null)
   const [animationCompleted, setAnimationCompleted] = useState(false)
+  const [pageLoaded, setPageLoaded] = useState(false)
   const [intersectedView, setIntersectedView] = useState<string>("")
 
   const heroRef = useRef<HTMLDivElement>(null);
@@ -87,12 +88,14 @@ function App() {
       <Hero globalScroll={scroll} setAnimationCompleted={setAnimationCompleted} ref={heroRef}/>
       {animationCompleted &&
         <div className='content-container'>
-          <Navbar globalScroll={scroll} scrollToComponent={scrollToComponent} intersectedView={intersectedView}/>
+          {pageLoaded &&
+            <Navbar globalScroll={scroll} scrollToComponent={scrollToComponent} intersectedView={intersectedView}/>
+          }
           <About globalScroll={scroll} ref={aboutRef}/>
           <Projects ref={projectsRef}/>
           <GitHub ref={gitRef}/>
           <Contact ref={contactRef}/>
-          <Footer />
+          <Footer setPageLoaded={setPageLoaded}/>
         </div>
       }
     </>
