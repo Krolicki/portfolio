@@ -102,7 +102,7 @@ function App() {
     },[animationCompleted])
 
   return (
-    <>
+    <div className='app-wrapper'>
       <Hero globalScroll={scroll} setAnimationCompleted={setAnimationCompleted} ref={heroRef}/>
       {animationCompleted &&
         <div className='content-container'>
@@ -116,7 +116,7 @@ function App() {
           <Footer setPageLoaded={setPageLoaded}/>
         </div>
       }
-    </>
+    </div>
   )
 }
 

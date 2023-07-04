@@ -1,18 +1,22 @@
 ::-webkit-scrollbar {
-    width: .7vw;
-    background: transparent;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: rgb(35, 175, 173);
-    border-radius: 15px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgb(28, 139, 138);
-    cursor: pointer;
-  }
+  width: .7vw;
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+background: rgb(35, 175, 173);
+border-radius: 15px;
+}
+::-webkit-scrollbar-thumb:hover {
+background: rgb(28, 139, 138);
+cursor: pointer;
+}
+
+.app-wrapper{
+  overflow-x: hidden;
+}
 
 .content-container{
-  z-index: 100;
+  
+ 
   background-color: rgb(var(--first-plan));
 }
