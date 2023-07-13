@@ -50,9 +50,9 @@
             }
         },
         "ref": {
-            "website": "Link do strony",
-            "repo": "Link do repozytorium",
-            "repos": "Link do repozytoriów",
+            "website": "Strona",
+            "repo": "Repozytorium",
+            "repos": "Repozytoria",
             "unavailable": "Link niedostępny"
         }
     },

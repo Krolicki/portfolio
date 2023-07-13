@@ -10,6 +10,7 @@ export type projectType = {
     ref: {
         desc: string
         link: string
+        demo?: string
     }
     technologies: string[]
     unavailable?: boolean
@@ -38,7 +39,7 @@ export const Projects = forwardRef<HTMLDivElement>((_,ref) => {
             description: t('projects.project.forum.description'),
             ref:{
                 desc: t('projects.ref.repo'),
-                link: "https://github.com/Krolicki/react-forum-page"
+                link: "https://github.com/Krolicki/react-forum-page",
             },
             technologies: ["React", "JavaScript", "Firebase", "React Router"]
         },
@@ -48,7 +49,8 @@ export const Projects = forwardRef<HTMLDivElement>((_,ref) => {
             description: t('projects.project.multiStepForm.description'),
             ref:{
                 desc: t('projects.ref.repo'),
-                link: "https://github.com/Krolicki/react-multi-step-form"
+                link: "https://github.com/Krolicki/react-multi-step-form",
+                demo: "https://krolicki.github.io/react-multi-step-form"
             },
             technologies: ["React", "Typescript", "i18next"]
         },
@@ -58,7 +60,8 @@ export const Projects = forwardRef<HTMLDivElement>((_,ref) => {
             description: t('projects.project.weatherApp.description'),
             ref:{
                 desc: t('projects.ref.repo'),
-                link: "https://github.com/Krolicki/react-weather"
+                link: "https://github.com/Krolicki/react-weather",
+                demo: "https://krolicki.github.io/react-weather"
             },
             technologies: ["React", "Typescript", "OpenWeather API"]
         },
@@ -68,7 +71,8 @@ export const Projects = forwardRef<HTMLDivElement>((_,ref) => {
             description: t('projects.project.photoEditor.description'),
             ref:{
                 desc: t('projects.ref.repo'),
-                link: "https://github.com/Krolicki/react-photo-editor"
+                link: "https://github.com/Krolicki/react-photo-editor",
+                demo: "https://krolicki.github.io/react-photo-editor"
             },
             technologies: ["React", "Typescript", "HTML Canvas"]
         },

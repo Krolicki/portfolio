@@ -106,7 +106,14 @@ export const Project = ({project, flip, setPhoto} : ProjectProps) => {
                     onTouchMove={handleTouchMove}
                   >
                       {project.images.map((image, index) =>{
-                          return <img alt={image} src={`projectsImages/${image}`} key={index} onClick={() => setPhoto(image)}/>
+                          return(
+                            <img 
+                              alt={image} 
+                              src={`projectsImages/${image}`} 
+                              key={index} onClick={() => setPhoto(image)}
+                              loading='lazy'
+                            />
+                          )
                       })}
                   </span>
               </div>
@@ -124,10 +131,13 @@ export const Project = ({project, flip, setPhoto} : ProjectProps) => {
             </div>
             <p>{(project.description)}</p>
             <span className='link'>
+              {project.ref.demo &&
+                <a href={`${project.ref.demo}`} target='_blank'><b className='project-ref'>Demo</b></a>
+              }
               {project.unavailable ? 
                 <b>{project.ref.desc}</b>
                 :
-                <a href={`${project.ref.link}`} target='_blank'><b>{project.ref.desc}</b></a>
+                <a href={`${project.ref.link}`} target='_blank'><b className='project-ref'>{project.ref.desc}</b></a>
               }
             </span>
             <div className='project-technologies'>
