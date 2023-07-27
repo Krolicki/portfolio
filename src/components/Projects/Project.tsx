@@ -10,6 +10,7 @@ type ProjectProps = {
 
 export const Project = ({project, flip, setPhoto} : ProjectProps) => {
     const [slidePhoto, setSlidePhoto] = useState(0)
+    const [inView, setInView] = useState(false)
     const slidePhotoRef = useRef(0)
     const containerRef = useRef<HTMLDivElement | null>(null)
     const observerRef = useRef<IntersectionObserver | null>(null)
@@ -48,9 +49,12 @@ export const Project = ({project, flip, setPhoto} : ProjectProps) => {
     useEffect(() => {
         observerRef.current = new IntersectionObserver((entries) => {
           if (entries[0].isIntersecting) {
+            setInView(true)
             startInterval()
           }
-        })
+        },
+        { rootMargin: "20%" }
+        )
 
         if(containerRef.current)
             observerRef.current.observe(containerRef.current)
@@ -95,7 +99,7 @@ export const Project = ({project, flip, setPhoto} : ProjectProps) => {
     } 
 
     return(
-        <div className={`project ${flip ? "flipColumns" : ""}`}>
+        <div className={`project ${inView ? "in-view" : ""} ${flip ? "flipColumns" : ""}`}>
             <h2>{project.title}</h2>
             <div className='project-photos'>
               <div className='project-images-slider'>

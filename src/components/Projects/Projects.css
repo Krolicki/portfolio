@@ -17,8 +17,14 @@
     flex-direction: column;
     gap: 5vh;
     margin-bottom: 5vh;
+    opacity: 0;
+    transition: opacity .8s, transform .8s;
+    transform: translateY(-20%);
 }
-
+.project.in-view{
+    opacity: 1;
+    transform: translateY(0%);
+}
 .project-images-slider{ 
     overflow-x: hidden;
 }
@@ -98,6 +104,13 @@
         grid-template-rows: repeat(4, min-content) 1fr min-content;
         grid-column-gap: 5vw;
         grid-row-gap: 3vh;
+        transform: translateX(-10%);
+    }
+    .project.flipColumns{
+        transform: translateX(10%);
+    }
+    .project.in-view{
+        transform: translateX(0%);
     }
     .project h2{ font-size: 1.5vw;}
     .project p { font-size: 1.2vw;}
