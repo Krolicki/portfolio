@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './Navbar.css'
 import i18n from '../../i18n/i18n';
 
@@ -38,22 +38,32 @@ const Sections : SectionType[]= [
 ]
 export const Navbar = ({ scrollDown, scrollToComponent, intersectedView} : NavbarType) => {
     const [menuClick, setMenuClick] = useState(false)
+    const [focus, setFocus] = useState(false)
+
+    useEffect(()=>{
+        if(scrollDown && focus)
+            setFocus(false)
+    },[scrollDown])
 
     return (
         <nav>
             <div className='nav-wraper'>
                 <button className='nav-button' type='button' onClick={()=>setMenuClick((prev) => !prev)}>menu</button>
-                <div className={`nav-items ${menuClick ? "show-menu" : ""} ${scrollDown ? "scroll-down" : ""}`}>
-                    {Sections.map(section => {
+                <div className={`nav-items ${menuClick ? "show-menu" : ""} ${scrollDown && !focus ? "scroll-down" : ""}`}>
+                    {Sections.map((section) => {
                         return(
-                            <span 
+                            <a 
                                 onClick={()=>{
                                     scrollToComponent(section.link)
                                     setMenuClick(false)
                                 }}
                                 key={section.link}
-                                className={`${intersectedView === (section.link).toLowerCase() ? "active" : ""}`}
-                            >{section.title}</span>
+                                href={`#${section.link}`}
+                                className={`${intersectedView === (section.link).toLowerCase() ? "active" : ""} nav-item`}
+                                tabIndex={0}
+                                onFocus={()=>setFocus(true)}
+                                onBlur={()=>setFocus(false)}
+                            >{section.title}</a>
                         )
                     })}
                 </div>

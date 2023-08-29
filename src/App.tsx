@@ -99,6 +99,9 @@ function App() {
             ref: ref
         })
       }
+      const url = window.location
+      if(url.hash)
+        scrollToComponent(url.hash.substring(1))
     },[animationCompleted])
 
   return (
