@@ -8,6 +8,7 @@ import { GitHub } from './components/GitHub/GitHub';
 import { Contact } from './components/Contact/Contact';
 import { Footer } from './components/Footer/Footer';
 import { Navbar } from './components/Navbar/Navbar';
+import { LanguageSelector } from './components/LanguageSelector/LanguageSelector';
 
 type Refs = {
   [key: string]: React.RefObject<HTMLDivElement>
@@ -110,7 +111,10 @@ function App() {
       {animationCompleted &&
         <div className='content-container'>
           {pageLoaded &&
-            <Navbar scrollDown={scrollDown} scrollToComponent={scrollToComponent} intersectedView={intersectedView}/>
+            <>
+              <LanguageSelector />
+              <Navbar scrollDown={scrollDown} scrollToComponent={scrollToComponent} intersectedView={intersectedView}/>
+            </>
           }
           <About globalScroll={scroll} ref={aboutRef}/>
           <Projects ref={projectsRef}/>

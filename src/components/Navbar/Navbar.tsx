@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './Navbar.css'
-import i18n from '../../i18n/i18n';
+import { useTranslation } from 'react-i18next';
 
 type SectionType = {
     title: string
@@ -16,15 +16,15 @@ type NavbarType = {
 
 const Sections : SectionType[]= [
     {
-        title: i18n.t('navbar.home'),
+        title: 'navbar.home',
         link: "hero"
     },
     {
-        title: i18n.t('navbar.about'),
+        title: 'navbar.about',
         link: "about"
     },
     {
-        title: i18n.t('navbar.projects'),
+        title: 'navbar.projects',
         link: "projects"
     },
     {
@@ -32,13 +32,15 @@ const Sections : SectionType[]= [
         link: "github"
     },
     {
-        title: i18n.t('navbar.contact'),
+        title: 'navbar.contact',
         link: "contact"
     }
 ]
 export const Navbar = ({ scrollDown, scrollToComponent, intersectedView} : NavbarType) => {
     const [menuClick, setMenuClick] = useState(false)
     const [focus, setFocus] = useState(false)
+
+    const { t } = useTranslation()
 
     useEffect(()=>{
         if(scrollDown && focus)
@@ -63,7 +65,7 @@ export const Navbar = ({ scrollDown, scrollToComponent, intersectedView} : Navba
                                 tabIndex={0}
                                 onFocus={()=>setFocus(true)}
                                 onBlur={()=>setFocus(false)}
-                            >{section.title}</a>
+                            >{t(section.title)}</a>
                         )
                     })}
                 </div>
